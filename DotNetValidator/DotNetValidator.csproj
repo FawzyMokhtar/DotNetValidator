@@ -40,8 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Abstractions\IValidationError.cs" />
-    <Compile Include="Models\Abstractions\IValidationModel.cs" />
     <Compile Include="Models\Errors\ValidationError.cs" />
     <Compile Include="Models\Sanitizers\SanitizerModel.cs" />
     <Compile Include="Models\Validators\ValidationModel.cs" />

@@ -1,5 +1,4 @@
-﻿using DotNetValidator.Models.Abstractions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +10,7 @@ namespace DotNetValidator.Models.Errors
     /// against all validation roles associated with it
     /// <para>[FOR INTERNAL USE ONLY]</para> 
     /// </summary>
-    public class ValidationError : IValidationError
+    public class ValidationError
     {
         private string PropertyName { get; set; }
         private List<string> Messages { get; set; }

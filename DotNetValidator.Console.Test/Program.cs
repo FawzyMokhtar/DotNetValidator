@@ -17,12 +17,11 @@ namespace DotNetValidator.C.Test
                 Name = "Fawzy Mokhtar",
                 Age = 25
             };
-
+            
             var validation = ValidationModel<Player>.Create(model, "Name")
                 .BeginSanitize()
                 .ToLower()
                 .EndSanitize();
-            Console.WriteLine(validation.GetData().Name);
             Console.WriteLine(model.Name);
             Console.ReadKey();
             goto a;

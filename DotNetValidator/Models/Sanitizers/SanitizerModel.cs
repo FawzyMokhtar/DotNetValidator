@@ -1,5 +1,4 @@
-﻿using DotNetValidator.Models.Abstractions;
-using DotNetValidator.Models.Errors;
+﻿using DotNetValidator.Models.Errors;
 using DotNetValidator.Models.Validators;
 using System;
 using System.Collections.Generic;
@@ -16,11 +15,11 @@ namespace DotNetValidator.Models.Sanitizers
     /// <para>[FOR INTERNAL USE ONLY]</para>
     /// </summary>
     /// <typeparam name="T">The data model of type T</typeparam>
-    public class SanitizerModel<T> : IValidationModel<T>
+    public class SanitizerModel<T>
     {
         private T Data { get; set; }
         private string PropertyName { get; set; }
-        private List<IValidationError> Errors { get; set; }
+        private List<ValidationError> Errors { get; set; }
 
         /// <summary>
         /// Creates a new Sanitizer model that can be used to modify the current Property value 
@@ -28,7 +27,7 @@ namespace DotNetValidator.Models.Sanitizers
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="model">ValidationModel model to initialize the new Sanitizer model</param>
-        public SanitizerModel(ValidationModel<T> model)
+        internal SanitizerModel(ValidationModel<T> model)
         {
             Data = model.GetData();
             PropertyName = model.GetPropertyName();
@@ -41,7 +40,7 @@ namespace DotNetValidator.Models.Sanitizers
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="model">SanitizerModel model to initialize the new Sanitizer model</param>
-        public SanitizerModel(SanitizerModel<T> model)
+        internal SanitizerModel(SanitizerModel<T> model)
         {
             Data = model.GetData();
             PropertyName = model.GetPropertyName();
@@ -53,7 +52,7 @@ namespace DotNetValidator.Models.Sanitizers
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns><typeparam>T</typeparam> Data model</returns>
-        public T GetData()
+        internal T GetData()
         {
             return Data;
         }
@@ -63,7 +62,7 @@ namespace DotNetValidator.Models.Sanitizers
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>string PropertyName</returns>
-        public string GetPropertyName()
+        internal string GetPropertyName()
         {
             return PropertyName;
         }
@@ -74,21 +73,9 @@ namespace DotNetValidator.Models.Sanitizers
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>List of validation errors</returns>
-        public List<IValidationError> GetErrors()
+        internal List<ValidationError> GetErrors()
         {
             return Errors;
-        }
-
-        /// <summary>
-        /// Adds a new validation error message to the list of validation errors for the current validated
-        /// Property
-        /// <para>[Sanitizer doesn't have implementation for this functionality]</para>
-        /// <para>[FOR INTERNAL USE ONLY]</para>
-        /// </summary>
-        /// <param name="message">string validation error message</param>
-        public void AddError(string message)
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -96,7 +83,7 @@ namespace DotNetValidator.Models.Sanitizers
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>object Property value</returns>
-        public object GetValue()
+        internal object GetValue()
         {
             PropertyInfo property = typeof(T).GetProperty(PropertyName);
             return property != null ? property.GetValue(Data, null) : null;
@@ -107,7 +94,7 @@ namespace DotNetValidator.Models.Sanitizers
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="value">object new Property value</param>
-        public void SetValue(object value)
+        internal void SetValue(object value)
         {
             PropertyInfo property = typeof(T).GetProperty(PropertyName);
             if (property != null)

@@ -1,5 +1,4 @@
-﻿using DotNetValidator.Models.Abstractions;
-using DotNetValidator.Models.Errors;
+﻿using DotNetValidator.Models.Errors;
 using DotNetValidator.Models.Sanitizers;
 using System;
 using System.Collections.Generic;
@@ -15,11 +14,11 @@ namespace DotNetValidator.Models.Validators
     /// <para>[FOR INTERNAL USE ONLY]</para>
     /// </summary>
     /// <typeparam name="T">The data model of type T</typeparam>
-    public class ValidationModel<T> : IValidationModel<T>
+    public class ValidationModel<T>
     {
         private T Data { get; set; }
         private string PropertyName { get; set; }
-        private List<IValidationError> Errors { get; set; }
+        private List<ValidationError> Errors { get; set; }
 
         /// <summary>
         /// Creates a new Validation model that can be used to validate the given Property value
@@ -32,7 +31,7 @@ namespace DotNetValidator.Models.Validators
         {
             Data = data;
             PropertyName = propertyName;
-            Errors = new List<IValidationError>();
+            Errors = new List<ValidationError>();
         }
 
         /// <summary>
@@ -65,7 +64,7 @@ namespace DotNetValidator.Models.Validators
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns><typeparam>T</typeparam> Data model</returns>
-        public T GetData()
+        internal T GetData()
         {
             return Data;
         }
@@ -75,7 +74,7 @@ namespace DotNetValidator.Models.Validators
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>string PropertyName</returns>
-        public string GetPropertyName()
+        internal string GetPropertyName()
         {
             return PropertyName;
         }
@@ -86,7 +85,7 @@ namespace DotNetValidator.Models.Validators
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>List of validation errors</returns>
-        public List<IValidationError> GetErrors()
+        internal List<ValidationError> GetErrors()
         {
             return Errors;
         }
@@ -97,7 +96,7 @@ namespace DotNetValidator.Models.Validators
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="message">string validation error message</param>
-        public void AddError(string message)
+        internal void AddError(string message)
         {
             if (Errors.Count != 0)
                 Errors.ElementAt(0).AddMessage(message);
@@ -114,21 +113,10 @@ namespace DotNetValidator.Models.Validators
         /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>object Property value</returns>
-        public object GetValue()
+        internal object GetValue()
         {
             PropertyInfo property = typeof(T).GetProperty(PropertyName);
             return property != null ? property.GetValue(Data, null) : null;
-        }
-
-        /// <summary>
-        /// Sets the value of the current validated Property under the data model
-        /// <para>[Validator doesn't have implementation for this functionality]</para>
-        /// <para>[FOR INTERNAL USE ONLY]</para>
-        /// </summary>
-        /// <param name="value">object new Property value</param>
-        public void SetValue(object value)
-        {
-            throw new NotImplementedException();
         }
     }
 }
