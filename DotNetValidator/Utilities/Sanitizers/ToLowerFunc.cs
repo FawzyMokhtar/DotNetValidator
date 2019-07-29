@@ -9,6 +9,13 @@ namespace DotNetValidator
 {
     public static class ToLowerFunc
     {
+        /// <summary>
+        /// Modifies the current Property value with a new lowercase copy
+        /// <para>Supported Data Types : Strings</para>
+        /// </summary>
+        /// <typeparam name="T">The type of data model</typeparam>
+        /// <param name="model">The sanitizer model to add more sanitization</param>
+        /// <returns>A SanitizerModel</returns>
         public static SanitizerModel<T> ToLower<T>(this SanitizerModel<T> model)
         {
             try

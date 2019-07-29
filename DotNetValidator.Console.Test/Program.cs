@@ -18,11 +18,11 @@ namespace DotNetValidator.C.Test
                 Age = 25
             };
 
-            var validation = new ValidationModel<Player>(model, "Name")
+            var validation = ValidationModel<Player>.Create(model, "Name")
                 .BeginSanitize()
                 .ToLower()
                 .EndSanitize();
-            Console.WriteLine(validation.Data.Name);
+            Console.WriteLine(validation.GetData().Name);
             Console.WriteLine(model.Name);
             Console.ReadKey();
             goto a;
