@@ -41,14 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Errors\ValidationError.cs" />
-    <Compile Include="Models\Sanitizers\SanitizerModel.cs" />
     <Compile Include="Models\Validators\ValidationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Sanitizers\ToLowerFunc.cs" />
-    <Compile Include="Utilities\Sanitizers\EndSanitizeFunc.cs" />
-    <Compile Include="Utilities\Sanitizers\BeginSanitizeFunc.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Models\Sanitizers\" />
     <Folder Include="Utilities\Validators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

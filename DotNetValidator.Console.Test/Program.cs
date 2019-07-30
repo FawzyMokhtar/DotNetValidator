@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using DotNetValidator;
-using DotNetValidator.Models.Validators;
 
 namespace DotNetValidator.C.Test
 {
@@ -11,17 +10,15 @@ namespace DotNetValidator.C.Test
     {
         static void Main(string[] args)
         {
-            a:
+        a:
             var model = new Player
             {
                 Name = "Fawzy Mokhtar",
                 Age = 25
             };
-            
+
             var validation = ValidationModel<Player>.Create(model, "Name")
-                .BeginSanitize()
-                .ToLower()
-                .EndSanitize();
+                .ToLower();
             Console.WriteLine(model.Name);
             Console.ReadKey();
             goto a;

@@ -1,12 +1,11 @@
 ﻿using DotNetValidator.Models.Errors;
-using DotNetValidator.Models.Sanitizers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 
-namespace DotNetValidator.Models.Validators
+namespace DotNetValidator
 {
     /// <summary>
     /// A validation model that holds all of validation errors for a given Property under a specific data model 
@@ -21,8 +20,8 @@ namespace DotNetValidator.Models.Validators
         private List<ValidationError> Errors { get; set; }
 
         /// <summary>
-        /// Creates a new Validation model that can be used to validate the given Property value
-        /// using some validation utility methods in the given data model
+        /// Creates a new Validation model that can be used to validate or sanitize the given Property value
+        /// using some validations or sanitization utility methods in the given data model
         /// </summary>
         /// <param name="data">The data model of type T</param>
         /// <param name="propertyName">The property name to be validated</param>
@@ -34,11 +33,12 @@ namespace DotNetValidator.Models.Validators
         }
 
         /// <summary>
-        /// Creates a new Validation model that can be used to validate the current Property value 
-        /// using some validation utility methods, this Validation model will be initialized from the given Sanitizer model
+        /// Creates a new Validation model that can be used to add more validations or sanitization to the current Property value 
+        /// using some validation or sanitization utility methods, 
+        /// this Validation model will be initialized from the given Validation model
         /// </summary>
-        /// <param name="model">SanitizerModel model to initialize the new Validation model</param>
-        internal ValidationModel(SanitizerModel<T> model)
+        /// <param name="model">ValidationModel model to initialize the new Validation model</param>
+        internal ValidationModel(ValidationModel<T> model)
         {
             Data = model.GetData();
             PropertyName = model.GetPropertyName();
@@ -46,8 +46,8 @@ namespace DotNetValidator.Models.Validators
         }
 
         /// <summary>
-        /// Creates a new Validation model that can be used to validate the given Property value
-        /// using some validation utility methods under the given data model
+        /// Creates a new Validation model that can be used to validate or sanitize the given Property value
+        /// using some validation or sanitization utility methods under the given data model
         /// </summary>
         /// <param name="data">The data model of type T</param>
         /// <param name="propertyName">The property name to be validated</param>
@@ -110,6 +110,19 @@ namespace DotNetValidator.Models.Validators
         {
             PropertyInfo property = typeof(T).GetProperty(PropertyName);
             return property != null ? property.GetValue(Data, null) : null;
+        }
+
+        /// <summary>
+        /// Sets the value of the current validated Property under the data model
+        /// </summary>
+        /// <param name="value">object new Property value</param>
+        internal void SetValue(object value)
+        {
+            PropertyInfo property = typeof(T).GetProperty(PropertyName);
+            if (property != null)
+            {
+                property.SetValue(Data, value, null);
+            }
         }
     }
 }
