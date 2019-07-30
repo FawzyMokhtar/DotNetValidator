@@ -24,7 +24,6 @@ namespace DotNetValidator.Models.Sanitizers
         /// <summary>
         /// Creates a new Sanitizer model that can be used to modify the current Property value 
         /// using some utility methods, this Sanitizer model will be initialized from the given Validation model
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="model">ValidationModel model to initialize the new Sanitizer model</param>
         internal SanitizerModel(ValidationModel<T> model)
@@ -37,7 +36,6 @@ namespace DotNetValidator.Models.Sanitizers
         /// <summary>
         /// Creates a new Sanitizer model that can be used to modify the current Property value 
         /// using some utility methods, this Sanitizer model will be initialized from the given Sanitizer model
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="model">SanitizerModel model to initialize the new Sanitizer model</param>
         internal SanitizerModel(SanitizerModel<T> model)
@@ -49,7 +47,6 @@ namespace DotNetValidator.Models.Sanitizers
 
         /// <summary>
         /// Gets the Data of type T associated with this instance
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns><typeparam>T</typeparam> Data model</returns>
         internal T GetData()
@@ -59,7 +56,6 @@ namespace DotNetValidator.Models.Sanitizers
 
         /// <summary>
         /// Gets the PropertyName for which the validation model was generated
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>string PropertyName</returns>
         internal string GetPropertyName()
@@ -70,7 +66,6 @@ namespace DotNetValidator.Models.Sanitizers
         /// <summary>
         /// The list of validation errors that resulting from validating the current model's PropertyName
         /// against all the validation roles
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>List of validation errors</returns>
         internal List<ValidationError> GetErrors()
@@ -80,7 +75,6 @@ namespace DotNetValidator.Models.Sanitizers
 
         /// <summary>
         /// Gets the value of the current validated Property under the data model
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>object Property value</returns>
         internal object GetValue()
@@ -91,7 +85,6 @@ namespace DotNetValidator.Models.Sanitizers
 
         /// <summary>
         /// Sets the value of the current validated Property under the data model
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="value">object new Property value</param>
         internal void SetValue(object value)

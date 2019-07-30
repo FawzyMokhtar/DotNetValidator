@@ -23,7 +23,6 @@ namespace DotNetValidator.Models.Validators
         /// <summary>
         /// Creates a new Validation model that can be used to validate the given Property value
         /// using some validation utility methods in the given data model
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="data">The data model of type T</param>
         /// <param name="propertyName">The property name to be validated</param>
@@ -37,7 +36,6 @@ namespace DotNetValidator.Models.Validators
         /// <summary>
         /// Creates a new Validation model that can be used to validate the current Property value 
         /// using some validation utility methods, this Validation model will be initialized from the given Sanitizer model
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="model">SanitizerModel model to initialize the new Validation model</param>
         internal ValidationModel(SanitizerModel<T> model)
@@ -61,7 +59,6 @@ namespace DotNetValidator.Models.Validators
 
         /// <summary>
         /// Gets the Data of type T associated with this instance
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns><typeparam>T</typeparam> Data model</returns>
         internal T GetData()
@@ -71,7 +68,6 @@ namespace DotNetValidator.Models.Validators
 
         /// <summary>
         /// Gets the PropertyName for which the validation model was generated
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>string PropertyName</returns>
         internal string GetPropertyName()
@@ -82,7 +78,6 @@ namespace DotNetValidator.Models.Validators
         /// <summary>
         /// The list of validation errors that resulting from validating the current model's PropertyName
         /// against all the validation roles
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>List of validation errors</returns>
         internal List<ValidationError> GetErrors()
@@ -93,7 +88,6 @@ namespace DotNetValidator.Models.Validators
         /// <summary>
         /// Adds a new validation error message to the list of validation errors for the current validated
         /// Property
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="message">string validation error message</param>
         internal void AddError(string message)
@@ -110,7 +104,6 @@ namespace DotNetValidator.Models.Validators
 
         /// <summary>
         /// Gets the value of the current validated Property under the data model
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>object Property value</returns>
         internal object GetValue()

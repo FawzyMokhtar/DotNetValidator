@@ -8,7 +8,6 @@ namespace DotNetValidator.Models.Errors
     /// <summary>
     /// A validation error that resulting from validating a given Property under a specific data model 
     /// against all validation roles associated with it
-    /// <para>[FOR INTERNAL USE ONLY]</para> 
     /// </summary>
     public class ValidationError
     {
@@ -19,7 +18,7 @@ namespace DotNetValidator.Models.Errors
         /// Creates a new validation error for the given PropertyName under the given validation model
         /// </summary>
         /// <param name="propertyName">string PropertyName for which the validation model was generated</param>
-        public ValidationError(string propertyName)
+        internal ValidationError(string propertyName)
         {
             PropertyName = propertyName;
             Messages = new List<string>();
@@ -27,10 +26,9 @@ namespace DotNetValidator.Models.Errors
 
         /// <summary>
         /// Gets the PropertyName for which the validation model was generated
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>string PropertyName</returns>
-        public string GetPropertyName()
+        internal string GetPropertyName()
         {
             return PropertyName;
         }
@@ -38,20 +36,18 @@ namespace DotNetValidator.Models.Errors
         /// <summary>
         /// Gets the list of validation errors resulting from validating the current model's PropertyName
         /// against all the validation roles
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <returns>List of string validation error messages</returns>
-        public List<string> GetMessages()
+        internal List<string> GetMessages()
         {
             return Messages;
         }
 
         /// <summary>
         /// Adds a new validation errors message to the current model's Property
-        /// <para>[FOR INTERNAL USE ONLY]</para>
         /// </summary>
         /// <param name="message">string validation error message</param>
-        public void AddMessage(string message)
+        internal void AddMessage(string message)
         {
             Messages.Add(message);
         }
