@@ -10,7 +10,6 @@ namespace DotNetValidator
     /// <summary>
     /// A validation model that holds all of validation errors for a given Property under a specific data model 
     /// against all validation roles associated with it
-    /// <para>[FOR INTERNAL USE ONLY]</para>
     /// </summary>
     /// <typeparam name="T">The data model of type T</typeparam>
     public class ValidationModel<T>
@@ -18,6 +17,11 @@ namespace DotNetValidator
         private T Data { get; set; }
         private string PropertyName { get; set; }
         private List<string> Errors { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicates whether this property could be null or not
+        /// </summary>
+        internal bool IsOptional { get; set; }
 
         /// <summary>
         /// Creates a new Validation model that can be used to validate or sanitize the given Property value

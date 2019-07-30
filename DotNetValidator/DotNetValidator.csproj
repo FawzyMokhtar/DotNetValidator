@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Errors\DefaultErrorMessages.cs" />
+    <Compile Include="Models\Errors\ValidationResult.cs" />
     <Compile Include="Models\Errors\ValidationError.cs" />
     <Compile Include="Models\Validators\ValidationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -49,9 +51,10 @@
     <Compile Include="Utilities\Sanitizers\TrimStartFunc.cs" />
     <Compile Include="Utilities\Sanitizers\TrimFunc.cs" />
     <Compile Include="Utilities\Sanitizers\ToLowerFunc.cs" />
+    <Compile Include="Utilities\Validators\WhiteListFunc.cs" />
+    <Compile Include="Utilities\Validators\OptionalFunc.cs" />
+    <Compile Include="Utilities\Validators\BlackListFunc.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utilities\Validators\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

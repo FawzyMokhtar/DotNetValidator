@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DotNetValidator.Models.Errors
+namespace DotNetValidator
 {
     /// <summary>
     /// A validation error that resulting from validating a given Property under a specific data model 
@@ -11,45 +11,47 @@ namespace DotNetValidator.Models.Errors
     /// </summary>
     public class ValidationError
     {
-        private string PropertyName { get; set; }
-        private List<string> Messages { get; set; }
+        private string _PropertyName { get; set; }
+        private List<string> _ErrorMessages { get; set; }
 
         /// <summary>
-        /// Creates a new validation error for the given PropertyName under the given validation model
+        /// Creates a new validation error for the given PropertyName and the list of validation error messages
         /// </summary>
         /// <param name="propertyName">string PropertyName for which the validation model was generated</param>
-        internal ValidationError(string propertyName)
+        /// <param name="errorMessages">The list of validation error messages</param>
+        internal ValidationError(string propertyName, List<string> errorMessages)
         {
-            PropertyName = propertyName;
-            Messages = new List<string>();
+            _PropertyName = propertyName;
+            _ErrorMessages = errorMessages;
         }
 
         /// <summary>
         /// Gets the PropertyName for which the validation model was generated
         /// </summary>
         /// <returns>string PropertyName</returns>
-        internal string GetPropertyName()
+        public string PropertyName
         {
-            return PropertyName;
+            get { return _PropertyName; }
         }
 
         /// <summary>
-        /// Gets the list of validation errors resulting from validating the current model's PropertyName
+        /// Gets the list of validation error messages resulting from validating the current model's PropertyName
         /// against all the validation roles
         /// </summary>
         /// <returns>List of string validation error messages</returns>
-        internal List<string> GetMessages()
+        public List<string> ErrorMessages
         {
-            return Messages;
+            get { return _ErrorMessages; }
         }
 
         /// <summary>
-        /// Adds a new validation errors message to the current model's Property
+        /// Adds new validation error messages to the list of validation errors for the current validated
+        /// Property
         /// </summary>
-        /// <param name="message">string validation error message</param>
-        internal void AddMessage(string message)
+        /// <param name="messages">A set of validation error message</param>
+        internal void AddErrorMessages(params string[] messages)
         {
-            Messages.Add(message);
+            _ErrorMessages.AddRange(messages);
         }
     }
 }
