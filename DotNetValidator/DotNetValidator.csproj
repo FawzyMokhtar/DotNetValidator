@@ -45,6 +45,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Sanitizers\ToUpperFunc.cs" />
     <Compile Include="Utilities\Sanitizers\TrimEndFunc.cs" />
+    <Compile Include="Utilities\Sanitizers\CustomSanitizerFunc.cs" />
     <Compile Include="Utilities\Sanitizers\TrimStartFunc.cs" />
     <Compile Include="Utilities\Sanitizers\TrimFunc.cs" />
     <Compile Include="Utilities\Sanitizers\ToLowerFunc.cs" />
