@@ -43,10 +43,13 @@
     <Compile Include="Models\Errors\ValidationError.cs" />
     <Compile Include="Models\Validators\ValidationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Sanitizers\ToUpperFunc.cs" />
+    <Compile Include="Utilities\Sanitizers\TrimEndFunc.cs" />
+    <Compile Include="Utilities\Sanitizers\TrimStartFunc.cs" />
+    <Compile Include="Utilities\Sanitizers\TrimFunc.cs" />
     <Compile Include="Utilities\Sanitizers\ToLowerFunc.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Sanitizers\" />
     <Folder Include="Utilities\Validators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

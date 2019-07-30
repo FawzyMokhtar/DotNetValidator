@@ -18,7 +18,9 @@ namespace DotNetValidator.C.Test
             };
 
             var validation = ValidationModel<Player>.Create(model, "Name")
-                .ToLower();
+                .Trim()
+                .TrimStart('F')
+                .TrimEnd('r');
             Console.WriteLine(model.Name);
             Console.ReadKey();
             goto a;
