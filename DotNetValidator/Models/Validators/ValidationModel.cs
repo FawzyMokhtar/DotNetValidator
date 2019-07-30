@@ -17,7 +17,7 @@ namespace DotNetValidator
     {
         private T Data { get; set; }
         private string PropertyName { get; set; }
-        private List<ValidationError> Errors { get; set; }
+        private List<string> Errors { get; set; }
 
         /// <summary>
         /// Creates a new Validation model that can be used to validate or sanitize the given Property value
@@ -29,7 +29,7 @@ namespace DotNetValidator
         {
             Data = data;
             PropertyName = propertyName;
-            Errors = new List<ValidationError>();
+            Errors = new List<string>();
         }
 
         /// <summary>
@@ -76,11 +76,11 @@ namespace DotNetValidator
         }
 
         /// <summary>
-        /// The list of validation errors that resulting from validating the current model's PropertyName
+        /// The list of validation error messages that resulting from validating the current model's PropertyName
         /// against all the validation roles
         /// </summary>
-        /// <returns>List of validation errors</returns>
-        internal List<ValidationError> GetErrors()
+        /// <returns>List of validation error messages</returns>
+        internal List<string> GetErrors()
         {
             return Errors;
         }
@@ -92,14 +92,7 @@ namespace DotNetValidator
         /// <param name="message">string validation error message</param>
         internal void AddError(string message)
         {
-            if (Errors.Count != 0)
-                Errors.ElementAt(0).AddMessage(message);
-            else
-            {
-                var error = new ValidationError(PropertyName);
-                error.AddMessage(message);
-                Errors.Add(error);
-            }
+            Errors.Add(message);
         }
 
         /// <summary>
