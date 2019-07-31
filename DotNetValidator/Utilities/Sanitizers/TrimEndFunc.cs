@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DotNetValidator
 {
-    public static class TrimEndFunc
+    public static partial class SanitizationUtility
     {
 
         /// <summary>

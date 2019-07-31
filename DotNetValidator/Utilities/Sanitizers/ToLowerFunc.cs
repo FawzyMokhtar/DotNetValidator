@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DotNetValidator
 {
-    public static class ToLowerFunc
+    public static partial class SanitizationUtility
     {
         /// <summary>
         /// A Sanitizer that modifies the current Property value with a new lowercase copy

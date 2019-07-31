@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DotNetValidator
 {
-    public static class CustomSanitizerFunc
+    public static partial class SanitizationUtility
     {
         /// <summary>
         /// Creates a custom sanitizer method that accepts an object value and returns a new object value

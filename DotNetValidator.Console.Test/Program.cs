@@ -19,15 +19,22 @@ namespace DotNetValidator.C.Test
             };
 
             var validation = ValidationModel<Player>.Create(model, "Name")
-                .BlackList(new object[] { "Fawzy Mokhtar", "Zain Fawzy" }, "This value is in black-list");
+                .BlackList(new object[] { "Fawzy Mokhtar", "Zain Fawzy" }, "This value is in black-list")
+                .MinLength(30)
+                .MaxLength(10);
 
             var validation2 = ValidationModel<Player>.Create(model, "Age")
                 .WhiteList(new object[] { 25, "30" }, "This value is not in white-list");
 
             var validation3 = ValidationModel<Player>.Create(model, "Name")
-                .WhiteList(new object[] { "Fawzy", "Zain" }, "This value is not in white-list");
+                .WhiteList(new object[] { "Fawzy", "Zain" }, "This value is not in white-list")
+                .Contains("_")
+                .Contains(null, "FOO", "BAR", "NAR");
 
-            var errors = ValidationResult.Validate(validation, validation2, validation3);
+            var validation4 = ValidationModel<Player>.Create(model, "Club")
+                .IsNotNull();
+
+            var errors = ValidationResult.Validate(validation, validation2, validation3, validation4);
             if (errors != null)
             {
                 foreach (var error in errors)
@@ -42,7 +49,7 @@ namespace DotNetValidator.C.Test
 
             Console.WriteLine("=====================================================");
 
-            var validationResult = ValidationResult.Result(validation, validation2, validation3);
+            var validationResult = ValidationResult.Result(validation, validation2, validation3, validation4);
             if (validationResult != null)
             {
                 if (validationResult.Name != null)
@@ -74,5 +81,12 @@ namespace DotNetValidator.C.Test
     {
         public string Name { get; set; }
         public int? Age { get; set; }
+        public Club Club { get; set; }
+    }
+
+    class Club
+    {
+        public string Name { get; set; }
+        public string Country { get; set; }
     }
 }

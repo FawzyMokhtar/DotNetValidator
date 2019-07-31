@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DotNetValidator
 {
-    public static class TrimFunc
+    public static partial class SanitizationUtility
     {
         /// <summary>
         /// A Sanitizer that removes all leading and trailing white-space characters 

@@ -6,7 +6,7 @@ using DotNetValidator.Models.Errors;
 
 namespace DotNetValidator
 {
-    public static class OptionalFunc
+    public static partial class ValidationUtility
     {
         /// <summary>
         /// Skips all of the following validations if the property's value was null

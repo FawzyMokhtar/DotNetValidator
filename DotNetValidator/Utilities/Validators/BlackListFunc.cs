@@ -6,10 +6,10 @@ using DotNetValidator.Models.Errors;
 
 namespace DotNetValidator
 {
-    public static class BlackListFunc
+    public static partial class ValidationUtility
     {
         /// <summary>
-        /// Checks if the property value is in the given black-list
+        /// Checks if the property's value is in the given black-list
         /// <para>Supported Data Types : All primitive data types</para>
         /// </summary>
         /// <typeparam name="T">The type of data model</typeparam>

@@ -51,6 +51,11 @@
     <Compile Include="Utilities\Sanitizers\TrimStartFunc.cs" />
     <Compile Include="Utilities\Sanitizers\TrimFunc.cs" />
     <Compile Include="Utilities\Sanitizers\ToLowerFunc.cs" />
+    <Compile Include="Utilities\Validators\IsNotNullFunc.cs" />
+    <Compile Include="Utilities\Validators\MaxLengthFunc.cs" />
+    <Compile Include="Utilities\Validators\MinLengthFunc.cs" />
+    <Compile Include="Utilities\Validators\IsLengthFunc.cs" />
+    <Compile Include="Utilities\Validators\ContainsFunc.cs" />
     <Compile Include="Utilities\Validators\WhiteListFunc.cs" />
     <Compile Include="Utilities\Validators\OptionalFunc.cs" />
     <Compile Include="Utilities\Validators\BlackListFunc.cs" />
