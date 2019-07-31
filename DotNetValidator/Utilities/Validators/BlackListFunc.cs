@@ -12,13 +12,12 @@ namespace DotNetValidator
         /// Checks if the property's value is in the given black-list
         /// <para>Supported Data Types : All primitive data types</para>
         /// </summary>
-        /// <typeparam name="T">The type of data model</typeparam>
         /// <typeparam name="TParam">The actual type of the property</typeparam>
         /// <param name="model">The validation model to add more validations or sanitization</param>
         /// <param name="blackList">An array of black-list values</param>
         /// <param name="errorMessage">An optional validation error message</param>
         /// <returns>A ValidationModel</returns>
-        public static ValidationModel<T> BlackList<T, TParam>(this ValidationModel<T> model, TParam[] blackList, string errorMessage = null)
+        public static ValidationModel BlackList<TParam>(this ValidationModel model, TParam[] blackList, string errorMessage = null)
         {
             try
             {

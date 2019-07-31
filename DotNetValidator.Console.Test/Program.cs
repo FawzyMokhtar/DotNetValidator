@@ -18,20 +18,20 @@ namespace DotNetValidator.C.Test
                 Age = 24
             };
 
-            var validation = ValidationModel<Player>.Create(model, "Name")
+            var validation = ValidationModel.Create(model, "Name")
                 .BlackList(new object[] { "Fawzy Mokhtar", "Zain Fawzy" }, "This value is in black-list")
                 .MinLength(30)
                 .MaxLength(10);
 
-            var validation2 = ValidationModel<Player>.Create(model, "Age")
+            var validation2 = ValidationModel.Create(model, "Age")
                 .WhiteList(new object[] { 25, "30" }, "This value is not in white-list");
 
-            var validation3 = ValidationModel<Player>.Create(model, "Name")
+            var validation3 = ValidationModel.Create(model, "Name")
                 .WhiteList(new object[] { "Fawzy", "Zain" }, "This value is not in white-list")
                 .Contains("_")
                 .Contains(null, "FOO", "BAR", "NAR");
 
-            var validation4 = ValidationModel<Player>.Create(model, "Club")
+            var validation4 = ValidationModel.Create(model, "Club")
                 .IsNotNull();
 
             var errors = ValidationResult.Validate(validation, validation2, validation3, validation4);

@@ -16,10 +16,10 @@ namespace DotNetValidator
         /// Validates the given set of ValidationModel and returns a list of ValidationError if there is a validation
         /// role failed or returns null if all validation roles passed
         /// </summary>
-        /// <typeparam name="T">The type of data model</typeparam>
+        
         /// <param name="data">The data model of type T</param>
         /// <returns>A list of ValidationError or null</returns>
-        public static List<ValidationError> Validate<T>(params ValidationModel<T>[] models)
+        public static List<ValidationError> Validate(params ValidationModel[] models)
         {
             var rejectedModels = models.Where(model => model.GetErrors().Count != 0);
             if (rejectedModels.Count() != 0)
@@ -43,10 +43,10 @@ namespace DotNetValidator
         /// that didn't passed the validation roles
         /// <para>It's RECOMMENDED to use this method if you are using DotNet Validator in the back-end</para>
         /// </summary>
-        /// <typeparam name="T">The type of data model</typeparam>
+        
         /// <param name="data">The data model of type T</param>
         /// <returns>A list of ValidationError or null</returns>
-        public static dynamic Result<T>(params ValidationModel<T>[] models)
+        public static dynamic Result(params ValidationModel[] models)
         {
             var errors = Validate(models);
             if (errors != null)

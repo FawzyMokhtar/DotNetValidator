@@ -12,12 +12,11 @@ namespace DotNetValidator
         /// Validates the length of the property's value using the given minimum length
         /// <para>Supported Data Types : Strings</para>
         /// </summary>
-        /// <typeparam name="T">The type of data model</typeparam>
         /// <param name="model">The validation model to add more validations or sanitization</param>
         /// <param name="minLength">The minimum length</param>
         /// <param name="errorMessage">An optional validation error message</param>
         /// <returns>A ValidationModel</returns>
-        public static ValidationModel<T> MinLength<T>(this ValidationModel<T> model, long minLength, string errorMessage = null)
+        public static ValidationModel MinLength(this ValidationModel model, long minLength, string errorMessage = null)
         {
             try
             {

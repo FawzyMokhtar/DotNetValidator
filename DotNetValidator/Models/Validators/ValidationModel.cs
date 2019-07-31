@@ -11,10 +11,9 @@ namespace DotNetValidator
     /// A validation model that holds all of validation errors for a given Property under a specific data model 
     /// against all validation roles associated with it
     /// </summary>
-    /// <typeparam name="T">The data model of type T</typeparam>
-    public class ValidationModel<T>
+    public class ValidationModel
     {
-        private T Data { get; set; }
+        private object Data { get; set; }
         private string PropertyName { get; set; }
         private List<string> Errors { get; set; }
 
@@ -27,9 +26,9 @@ namespace DotNetValidator
         /// Creates a new Validation model that can be used to validate or sanitize the given Property value
         /// using some validations or sanitization utility methods in the given data model
         /// </summary>
-        /// <param name="data">The data model of type T</param>
+        /// <param name="data">The object data model to validate the given property</param>
         /// <param name="propertyName">The property name to be validated</param>
-        internal ValidationModel(T data, string propertyName)
+        internal ValidationModel(object data, string propertyName)
         {
             Data = data;
             PropertyName = propertyName;
@@ -42,7 +41,7 @@ namespace DotNetValidator
         /// this Validation model will be initialized from the given Validation model
         /// </summary>
         /// <param name="model">ValidationModel model to initialize the new Validation model</param>
-        internal ValidationModel(ValidationModel<T> model)
+        internal ValidationModel(ValidationModel model)
         {
             Data = model.GetData();
             PropertyName = model.GetPropertyName();
@@ -53,19 +52,19 @@ namespace DotNetValidator
         /// Creates a new Validation model that can be used to validate or sanitize the given Property value
         /// using some validation or sanitization utility methods under the given data model
         /// </summary>
-        /// <param name="data">The data model of type T</param>
+        /// <param name="data">The data model of type object</param>
         /// <param name="propertyName">The property name to be validated</param>
         /// <returns>A new instance of validation model for the given Property under the given data model</returns>
-        public static ValidationModel<T> Create(T data, string propertyName)
+        public static ValidationModel Create(object data, string propertyName)
         {
-            return new ValidationModel<T>(data, propertyName);
+            return new ValidationModel(data, propertyName);
         }
 
         /// <summary>
-        /// Gets the Data of type T associated with this instance
+        /// Gets the Data of type object associated with this instance
         /// </summary>
-        /// <returns><typeparam>T</typeparam> Data model</returns>
-        internal T GetData()
+        /// <returns>object data model</returns>
+        internal object GetData()
         {
             return Data;
         }
@@ -105,7 +104,7 @@ namespace DotNetValidator
         /// <returns>object Property value</returns>
         internal object GetValue()
         {
-            PropertyInfo property = typeof(T).GetProperty(PropertyName);
+            PropertyInfo property = Data.GetType().GetProperty(PropertyName);
             return property != null ? property.GetValue(Data, null) : null;
         }
 
@@ -115,7 +114,7 @@ namespace DotNetValidator
         /// <param name="value">object new Property value</param>
         internal void SetValue(object value)
         {
-            PropertyInfo property = typeof(T).GetProperty(PropertyName);
+            PropertyInfo property = Data.GetType().GetProperty(PropertyName);
             if (property != null)
             {
                 property.SetValue(Data, value, null);

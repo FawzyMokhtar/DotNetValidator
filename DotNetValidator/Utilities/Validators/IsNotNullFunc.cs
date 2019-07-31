@@ -12,11 +12,10 @@ namespace DotNetValidator
         /// Checks if the property's value is not null
         /// <para>Supported Data Types : All data types</para>
         /// </summary>
-        /// <typeparam name="T">The type of data model</typeparam>
         /// <param name="model">The validation model to add more validations or sanitization</param>
         /// <param name="errorMessage">An optional validation error message</param>
         /// <returns>A ValidationModel</returns>
-        public static ValidationModel<T> IsNotNull<T>(this ValidationModel<T> model, string errorMessage = null)
+        public static ValidationModel IsNotNull(this ValidationModel model, string errorMessage = null)
         {
             try
             {

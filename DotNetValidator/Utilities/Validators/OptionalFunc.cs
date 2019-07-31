@@ -11,10 +11,9 @@ namespace DotNetValidator
         /// <summary>
         /// Skips all of the following validations if the property's value was null
         /// </summary>
-        /// <typeparam name="T">The type of data model</typeparam>
         /// <param name="model">The validation model to add more validations or sanitization</param>
         /// <returns>A ValidationModel</returns>
-        public static ValidationModel<T> Optional<T>(this ValidationModel<T> model)
+        public static ValidationModel Optional(this ValidationModel model)
         {
             model.IsOptional = true;
             return model;

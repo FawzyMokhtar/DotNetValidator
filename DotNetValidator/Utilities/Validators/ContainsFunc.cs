@@ -12,12 +12,11 @@ namespace DotNetValidator
         /// Checks if the property's value contains the given string value
         /// <para>Supported Data Types : Strings</para>
         /// </summary>
-        /// <typeparam name="T">The type of data model</typeparam>
         /// <param name="model">The validation model to add more validations or sanitization</param>
         /// <param name="str">The value that the property's value should contains</param>
         /// <param name="errorMessage">An optional validation error message</param>
         /// <returns>A ValidationModel</returns>
-        public static ValidationModel<T> Contains<T>(this ValidationModel<T> model, string str
+        public static ValidationModel Contains(this ValidationModel model, string str
             , string errorMessage = null)
         {
             try
@@ -40,12 +39,12 @@ namespace DotNetValidator
         /// Checks if the property's value contains at least one of the given string values
         /// <para>Supported Data Types : Strings</para>
         /// </summary>
-        /// <typeparam name="T">The type of data model</typeparam>
+        
         /// <param name="model">The validation model to add more validations or sanitization</param>
         /// <param name="errorMessage">An optional validation error message</param>
         /// <param name="strs">The values that the property's value should contains one at least</param>
         /// <returns>A ValidationModel</returns>
-        public static ValidationModel<T> Contains<T>(this ValidationModel<T> model, string errorMessage = null
+        public static ValidationModel Contains(this ValidationModel model, string errorMessage = null
             , params string[] strs)
         {
             try

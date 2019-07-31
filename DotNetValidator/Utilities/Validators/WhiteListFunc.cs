@@ -12,13 +12,12 @@ namespace DotNetValidator
         /// Checks if the property's value is in the given white-list
         /// <para>Supported Data Types : All primitive data types</para>
         /// </summary>
-        /// <typeparam name="T">The type of data model</typeparam>
         /// <typeparam name="TParam">The actual type of the property</typeparam>
         /// <param name="model">The validation model to add more validations or sanitization</param>
         /// <param name="whiteList">An array of white-list values</param>
         /// <param name="errorMessage">An optional validation error message</param>
         /// <returns>A ValidationModel</returns>
-        public static ValidationModel<T> WhiteList<T, TParam>(this ValidationModel<T> model, TParam[] whiteList, string errorMessage = null)
+        public static ValidationModel WhiteList<TParam>(this ValidationModel model, TParam[] whiteList, string errorMessage = null)
         {
             try
             {
