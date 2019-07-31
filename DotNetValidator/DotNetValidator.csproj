@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\CreditCardVerification.cs" />
     <Compile Include="Models\Errors\DefaultErrorMessages.cs" />
     <Compile Include="Models\Errors\ValidationResult.cs" />
     <Compile Include="Models\Errors\ValidationError.cs" />
@@ -51,6 +52,17 @@
     <Compile Include="Utilities\Sanitizers\TrimStartFunc.cs" />
     <Compile Include="Utilities\Sanitizers\TrimFunc.cs" />
     <Compile Include="Utilities\Sanitizers\ToLowerFunc.cs" />
+    <Compile Include="Utilities\Validators\EndsWithFunc.cs" />
+    <Compile Include="Utilities\Validators\IsEmailFunc.cs" />
+    <Compile Include="Utilities\Validators\IsFQDNFunc.cs" />
+    <Compile Include="Utilities\Validators\IsFileUriFunc.cs" />
+    <Compile Include="Utilities\Validators\IsCreditCardFunc.cs" />
+    <Compile Include="Utilities\Validators\IsBase64Func.cs" />
+    <Compile Include="Utilities\Validators\IsASCIIFunc.cs" />
+    <Compile Include="Utilities\Validators\StartsWithFunc.cs" />
+    <Compile Include="Utilities\Validators\MatchesFunc.cs" />
+    <Compile Include="Utilities\Validators\IsAlphaFunc.cs" />
+    <Compile Include="Utilities\Validators\IsAlphaNumericFunc.cs" />
     <Compile Include="Utilities\Validators\IsNotNullFunc.cs" />
     <Compile Include="Utilities\Validators\MaxLengthFunc.cs" />
     <Compile Include="Utilities\Validators\MinLengthFunc.cs" />

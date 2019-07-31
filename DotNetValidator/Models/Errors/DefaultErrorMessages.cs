@@ -31,6 +31,70 @@ namespace DotNetValidator.Models.Errors
             }
         }
 
+        public static string IsAlphaNumeric
+        {
+            get
+            {
+                return "Value is not an alphanumeric string";
+            }
+        }
+
+        public static string IsAlpha
+        {
+            get
+            {
+                return "Value is not an alphabetical string";
+            }
+        }
+
+        public static string IsASCII
+        {
+            get
+            {
+                return "Value is not an ASCII";
+            }
+        }
+
+        public static string IsBase64
+        {
+            get
+            {
+                return "Value is not a valid base64";
+            }
+        }
+
+        public static string IsCreditCard
+        {
+            get
+            {
+                return "Value is not a valid credit card number";
+            }
+        }
+
+        public static string IsFileUri
+        {
+            get
+            {
+                return "Value is not a valid file uri over the network (http, https)";
+            }
+        }
+
+        public static string IsEmail
+        {
+            get
+            {
+                return "Value is not a valid email";
+            }
+        }
+
+        public static string IsFQDN
+        {
+            get
+            {
+                return "Value is not a fully qualified domain name";
+            }
+        }
+
         public static string IsLength(long minLength, long maxLength)
         {
             return $"The length should be between {minLength} and {maxLength} characters";
@@ -64,6 +128,21 @@ namespace DotNetValidator.Models.Errors
             concatStr += "]";
 
             return $"Should contains at least one of the values {concatStr}";
+        }
+
+        public static string Matches(string pattern)
+        {
+            return $"Does not match the pattern {pattern}";
+        }
+
+        public static string StartsWith(string str)
+        {
+            return $"Should starts with the value {str}";
+        }
+
+        public static string EndsWith(string str)
+        {
+            return $"Should ends with the value {str}";
         }
     }
 }
