@@ -10,9 +10,17 @@ namespace DotNetValidator.C.Test
 {
     class Program
     {
+        static void Mutate(Country c)
+        {
+            c.Name = c.Name.ToUpper();
+        }
         static void Main(string[] args)
         {
         a:
+            var c = new Country { Name = "fawzy mokhtar" };
+            var z = c;
+            Mutate(c);
+            Console.WriteLine(z.Name);
             var model = new Person
             {
                 Name = "Fawzy Mokhtar",
@@ -36,6 +44,8 @@ namespace DotNetValidator.C.Test
                 PostalCode = "1234-56789",
                 ProfileUrl = "https://www.fb.com/dev.fawzymokhtar",
                 Id = "00000000-0000-0000-0000-000000000000",
+                DateOfBirth = "1994-07-16",
+                AvailableTime = "10:15",
             };
 
             Stopwatch sw = new Stopwatch();
@@ -106,10 +116,16 @@ namespace DotNetValidator.C.Test
             var validation18 = ValidationModel.Create(model, "Id")
                 .IsGuid();
 
+            var validation19 = ValidationModel.Create(model, "DateOfBirth")
+                .IsInRange(new DateTime(1990, 01, 01), new DateTime(2000, 01, 01));
+
+            var validation20 = ValidationModel.Create(model, "AvailableTime")
+                .IsInRange(new TimeSpan(08, 00, 00), new TimeSpan(23, 00, 00));
+
             var errors = ValidationResult.Validate(validation, validation2, validation3, validation4,
                 validation5, validation6, validation7, validation8, validation9, validation10,
                 validation11, validation12, validation13, validation14, validation15, validation16,
-                validation17, validation18);
+                validation17, validation18, validation19, validation20);
 
             sw.Stop();
 
@@ -179,6 +195,8 @@ namespace DotNetValidator.C.Test
         public string PostalCode { get; set; }
         public string ProfileUrl { get; set; }
         public string Id { get; set; }
+        public string DateOfBirth { get; set; }
+        public string AvailableTime { get; set; }
         public Country Country { get; set; }
     }
 

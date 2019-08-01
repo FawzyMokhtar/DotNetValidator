@@ -226,5 +226,50 @@ namespace DotNetValidator.Models.Errors
         {
             return $"Value is not a valid ip {ipVersion} address";
         }
+
+        public static string IsInRange(double minValue, double maxValue)
+        {
+            return $"The value should be between {minValue} and {maxValue}";
+        }
+
+        public static string IsInRange(DateTime minDateTime, DateTime maxDateTime)
+        {
+            return $"The value should be between {minDateTime.ToString()} and {maxDateTime.ToString()}";
+        }
+
+        public static string IsInRange(TimeSpan minTime, TimeSpan maxTime)
+        {
+            return $"The value should be between {minTime.ToString()} and {maxTime.ToString()}";
+        }
+
+        public static string Min(double minValue)
+        {
+            return $"The value should be at least {minValue}";
+        }
+
+        public static string Min(DateTime minDateTime)
+        {
+            return $"The value should be at least {minDateTime.ToString()}";
+        }
+
+        public static string Min(TimeSpan minTime)
+        {
+            return $"The value should be at least {minTime.ToString()}";
+        }
+
+        public static string Max(double maxValue)
+        {
+            return $"The value should be at most {maxValue}";
+        }
+
+        public static string Max(DateTime maxDateTime)
+        {
+            return $"The value should be at most {maxDateTime.ToString()}";
+        }
+
+        public static string Max(TimeSpan maxTime)
+        {
+            return $"The value should be at most {maxTime.ToString()}";
+        }
     }
 }
