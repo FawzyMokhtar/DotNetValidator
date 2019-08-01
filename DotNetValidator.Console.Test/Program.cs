@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DotNetValidator;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace DotNetValidator.C.Test
 {
@@ -25,7 +26,20 @@ namespace DotNetValidator.C.Test
                 //Email= "test.best.com",
                 Email = "test.nest@best.com",
                 DomainName = "test.best.com",
+                IPv4 = "99.48.227.227",
+                IPv6 = "2001:0db8:0000:0000:0000:ff00:0042:7879",
+                BookNumber = "007462542X",
+                SerialNumber = "ISSN 0277-786X", // 0277-786X
+                Location = "51.498134, -0.201755",
+                MacAddress = "0c-8f-ff-4a-64-f7",
+                Port = -1,
+                PostalCode = "1234-56789",
+                ProfileUrl = "https://www.fb.com/dev.fawzymokhtar",
+                Id = "00000000-0000-0000-0000-000000000000",
             };
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
 
             var validation = ValidationModel.Create(model, "Name")
                 .BlackList(new object[] { "Fawzy Mokhtar", "Zain Fawzy" }, "This value is in black-list")
@@ -62,8 +76,43 @@ namespace DotNetValidator.C.Test
             var validation8 = ValidationModel.Create(model, "DomainName")
                 .IsFQDN();
 
-            var errors = ValidationResult.Validate(validation, validation2, validation3, validation4, 
-                validation5, validation6, validation7, validation8);
+            var validation9 = ValidationModel.Create(model, "IPv4")
+                .IsIP(IPVersion.IPv4);
+
+            var validation10 = ValidationModel.Create(model, "IPv6")
+                .IsIP(IPVersion.IPv6);
+
+            var validation11 = ValidationModel.Create(model, "BookNumber")
+                .IsISBN();
+
+            var validation12 = ValidationModel.Create(model, "SerialNumber")
+                .IsISSN();
+
+            var validation13 = ValidationModel.Create(model, "Location")
+                .IsLatLang();
+
+            var validation14 = ValidationModel.Create(model, "MacAddress")
+                .IsMACAddress();
+
+            var validation15 = ValidationModel.Create(model, "Port")
+                .IsPort();
+
+            var validation16 = ValidationModel.Create(model, "PostalCode")
+                .IsPostalCode();
+
+            var validation17 = ValidationModel.Create(model, "ProfileUrl")
+                .IsUrl();
+
+            var validation18 = ValidationModel.Create(model, "Id")
+                .IsGuid();
+
+            var errors = ValidationResult.Validate(validation, validation2, validation3, validation4,
+                validation5, validation6, validation7, validation8, validation9, validation10,
+                validation11, validation12, validation13, validation14, validation15, validation16,
+                validation17, validation18);
+
+            sw.Stop();
+
             if (errors != null)
             {
                 foreach (var error in errors)
@@ -102,6 +151,11 @@ namespace DotNetValidator.C.Test
             //    Console.WriteLine(JsonConvert.SerializeObject(validationResult));
             //}
             //Console.WriteLine(model.Name);
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Took {0} Ms to validate models", Math.Floor(sw.Elapsed.TotalMilliseconds));
             Console.ReadKey();
             goto a;
         }
@@ -115,6 +169,16 @@ namespace DotNetValidator.C.Test
         public string CV { get; set; }
         public string Email { get; set; }
         public string DomainName { get; set; }
+        public string IPv4 { get; set; }
+        public string IPv6 { get; set; }
+        public string BookNumber { get; set; }
+        public string SerialNumber { get; set; }
+        public string Location { get; set; }
+        public string MacAddress { get; set; }
+        public int Port { get; set; }
+        public string PostalCode { get; set; }
+        public string ProfileUrl { get; set; }
+        public string Id { get; set; }
         public Country Country { get; set; }
     }
 

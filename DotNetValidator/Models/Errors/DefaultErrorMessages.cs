@@ -95,6 +95,78 @@ namespace DotNetValidator.Models.Errors
             }
         }
 
+        public static string IsISBN
+        {
+            get
+            {
+                return "Value is not a valid international standard book number";
+            }
+        }
+
+        public static string IsISRC
+        {
+            get
+            {
+                return "Value is not a valid international standard recording code";
+            }
+        }
+
+        public static string IsISSN
+        {
+            get
+            {
+                return "Value is not a valid international standard serial number";
+            }
+        }
+
+        public static string IsLatLang
+        {
+            get
+            {
+                return "Value is not a valid gps coordinates, latitude and longitude";
+            }
+        }
+
+        public static string IsMACAddress
+        {
+            get
+            {
+                return "Value is not a valid machine address";
+            }
+        }
+
+        public static string IsPort
+        {
+            get
+            {
+                return "Value is not a valid port number";
+            }
+        }
+
+        public static string IsPostalCode
+        {
+            get
+            {
+                return "Value is not a valid postal code";
+            }
+        }
+
+        public static string IsUrl
+        {
+            get
+            {
+                return "Value is not a valid url";
+            }
+        }
+
+        public static string IsGuid
+        {
+            get
+            {
+                return "Value is not a valid guid";
+            }
+        }
+
         public static string IsLength(long minLength, long maxLength)
         {
             return $"The length should be between {minLength} and {maxLength} characters";
@@ -143,6 +215,16 @@ namespace DotNetValidator.Models.Errors
         public static string EndsWith(string str)
         {
             return $"Should ends with the value {str}";
+        }
+
+        public static string IsIP()
+        {
+            return "Value is not a valid ip address";
+        }
+
+        public static string IsIP(string ipVersion)
+        {
+            return $"Value is not a valid ip {ipVersion} address";
         }
     }
 }

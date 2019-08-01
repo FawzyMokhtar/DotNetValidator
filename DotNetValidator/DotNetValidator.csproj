@@ -41,11 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\CreditCardVerification.cs" />
+    <Compile Include="Models\Misc\IPVersion.cs" />
     <Compile Include="Models\Errors\DefaultErrorMessages.cs" />
     <Compile Include="Models\Errors\ValidationResult.cs" />
     <Compile Include="Models\Errors\ValidationError.cs" />
     <Compile Include="Models\Validators\ValidationModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Sanitizers\ToDateFunc.cs" />
     <Compile Include="Utilities\Sanitizers\ToUpperFunc.cs" />
     <Compile Include="Utilities\Sanitizers\TrimEndFunc.cs" />
     <Compile Include="Utilities\Sanitizers\CustomSanitizerFunc.cs" />
@@ -54,6 +56,16 @@
     <Compile Include="Utilities\Sanitizers\ToLowerFunc.cs" />
     <Compile Include="Utilities\Validators\EndsWithFunc.cs" />
     <Compile Include="Utilities\Validators\IsEmailFunc.cs" />
+    <Compile Include="Utilities\Validators\IsGuidFunc.cs" />
+    <Compile Include="Utilities\Validators\IsUrlFunc.cs" />
+    <Compile Include="Utilities\Validators\IsPostalCodeFunc.cs" />
+    <Compile Include="Utilities\Validators\IsPortFunc.cs" />
+    <Compile Include="Utilities\Validators\IsMACAddressFunc.cs" />
+    <Compile Include="Utilities\Validators\IsLatLangFunc.cs" />
+    <Compile Include="Utilities\Validators\IsISSNFunc.cs" />
+    <Compile Include="Utilities\Validators\IsISRCFunc.cs" />
+    <Compile Include="Utilities\Validators\IsISBNFunc.cs" />
+    <Compile Include="Utilities\Validators\IsIPFunc.cs" />
     <Compile Include="Utilities\Validators\IsFQDNFunc.cs" />
     <Compile Include="Utilities\Validators\IsFileUriFunc.cs" />
     <Compile Include="Utilities\Validators\IsCreditCardFunc.cs" />
