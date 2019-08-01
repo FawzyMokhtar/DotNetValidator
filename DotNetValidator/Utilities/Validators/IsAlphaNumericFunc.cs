@@ -24,7 +24,7 @@ namespace DotNetValidator
                 var value = model.GetValue();
                 if (!model.IsOptional || value != null)
                 {
-                    if (!new Regex(@"^[a-zA-Z0-9]+$").IsMatch(value.ToString()))
+                    if (!Regex.IsMatch(value.ToString(), @"^[a-zA-Z0-9]+$"))
                         model.AddError(errorMessage ?? DefaultErrorMessages.IsAlphaNumeric);
                 }
             }

@@ -23,7 +23,7 @@ namespace DotNetValidator
                 var value = model.GetValue();
                 if (!model.IsOptional || value != null)
                 {
-                    if (!new Regex(@"^[A-Z]{2}-?[A-Z\d]{3}-?\d{2}-?\d{5}$").IsMatch(value.ToString()))
+                    if (!Regex.IsMatch(value.ToString(), @"^[A-Z]{2}-?[A-Z\d]{3}-?\d{2}-?\d{5}$"))
                         model.AddError(errorMessage ?? DefaultErrorMessages.IsISRC);
                 }
             }

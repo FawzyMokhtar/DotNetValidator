@@ -23,9 +23,10 @@ namespace DotNetValidator
                 var value = model.GetValue();
                 if (!model.IsOptional || value != null)
                 {
-                    if (!new Regex(@"^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$")
-                        .IsMatch(value.ToString())
-                        )
+                    if (!Regex.IsMatch(value.ToString(),
+                                       @"^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$"
+                                      )
+                       )
                         model.AddError(errorMessage ?? DefaultErrorMessages.IsUrl);
                 }
             }

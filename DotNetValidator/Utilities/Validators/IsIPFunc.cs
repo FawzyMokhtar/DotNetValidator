@@ -60,9 +60,11 @@ namespace DotNetValidator
                         // is a valid ipv4 
                         (
                          ipVersion == IPVersion.IPv4
-                                      && !new Regex(@"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}" +
-                                                    @"([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"
-                                                   , RegexOptions.IgnoreCase).IsMatch(value.ToString())
+                                      && !Regex.IsMatch(value.ToString(),
+                                                        @"^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}" +
+                                                        @"([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"
+                                                        , RegexOptions.IgnoreCase
+                                                       )
                         )
                         ||
                         // is a valid ipv6

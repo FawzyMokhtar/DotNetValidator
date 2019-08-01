@@ -23,8 +23,9 @@ namespace DotNetValidator
                 var value = model.GetValue();
                 if (!model.IsOptional || value != null)
                 {
-                    if (!new Regex(@"^[0-9]{4}-[0-9]{3}[0-9xX]$|^ISSN [0-9]{4}-[0-9]{3}[0-9xX]$")
-                        .IsMatch(value.ToString())
+                    if (!Regex.IsMatch(value.ToString(),
+                                       @"^[0-9]{4}-[0-9]{3}[0-9xX]$|^ISSN [0-9]{4}-[0-9]{3}[0-9xX]$"
+                                      )
                         )
                         model.AddError(errorMessage ?? DefaultErrorMessages.IsISSN);
                 }

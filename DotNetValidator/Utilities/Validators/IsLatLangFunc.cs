@@ -23,8 +23,9 @@ namespace DotNetValidator
                 var value = model.GetValue();
                 if (!model.IsOptional || value != null)
                 {
-                    if (!new Regex(@"^([-+]?)([\d]{1,2})(((\.)(\d+)(,)))(\s*)(([-+]?)([\d]{1,3})((\.)(\d+))?)$")
-                        .IsMatch(value.ToString())
+                    if (!Regex.IsMatch(value.ToString(),
+                                       @"^([-+]?)([\d]{1,2})(((\.)(\d+)(,)))(\s*)(([-+]?)([\d]{1,3})((\.)(\d+))?)$"
+                                      )
                        )
                         model.AddError(errorMessage ?? DefaultErrorMessages.IsLatLang);
                 }

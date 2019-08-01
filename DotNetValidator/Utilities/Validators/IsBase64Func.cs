@@ -24,9 +24,9 @@ namespace DotNetValidator
                 var value = model.GetValue();
                 if (!model.IsOptional || value != null)
                 {
-                    if (!new Regex("^(?:data:[a-zA-Z]+/[a-zA-Z]+;base64,|[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$")
-                        .IsMatch(value.ToString())
-                        )
+                    if (!Regex.IsMatch(value.ToString(),
+                        "^(?:data:[a-zA-Z]+/[a-zA-Z]+;base64,|[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$")
+                       )
                         model.AddError(errorMessage ?? DefaultErrorMessages.IsBase64);
                 }
             }

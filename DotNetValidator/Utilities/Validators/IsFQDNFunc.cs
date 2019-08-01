@@ -23,8 +23,9 @@ namespace DotNetValidator
                 var value = model.GetValue();
                 if (!model.IsOptional || value != null)
                 {
-                    if (!new Regex(@"(?=^.{1,254}$)(^(?:(?!\d+\.|-)[a-zA-Z0-9_\-]{1,63}(?<!-)\.?)+(?:[a-zA-Z]{2,})$)")
-                        .IsMatch(value.ToString())
+                    if (!Regex.IsMatch(value.ToString(),
+                                           @"(?=^.{1,254}$)(^(?:(?!\d+\.|-)[a-zA-Z0-9_\-]{1,63}(?<!-)\.?)+(?:[a-zA-Z]{2,})$)"
+                                      )
                         )
                         model.AddError(errorMessage ?? DefaultErrorMessages.IsFQDN);
                 }
