@@ -8,9 +8,9 @@ namespace DotNetValidator
         /// A Sanitizer that modifies the current Property value with a new uppercase copy
         /// <para>Supported Data Types : Strings</para>
         /// </summary>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel ToUpper(this ValidationModel model)
+        /// <param name="model">The validator model to add more validations or sanitization</param>
+        /// <returns>A Validator</returns>
+        public static Validator ToUpper(this Validator model)
         {
             try
             {

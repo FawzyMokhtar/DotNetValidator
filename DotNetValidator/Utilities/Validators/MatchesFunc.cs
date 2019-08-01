@@ -10,11 +10,11 @@ namespace DotNetValidator
         /// Checks if the property's value matches the given pattern
         /// <para>Supported Data Types : Strings</para>
         /// </summary>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
+        /// <param name="model">The validator model to add more validations or sanitization</param>
         /// <param name="pattern">The pattern that the property's value should match</param>
         /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel Matches(this ValidationModel model,string pattern ,string errorMessage = null)
+        /// <returns>A Validator</returns>
+        public static Validator Matches(this Validator model,string pattern ,string errorMessage = null)
         {
             try
             {

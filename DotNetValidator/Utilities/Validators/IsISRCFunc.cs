@@ -10,10 +10,10 @@ namespace DotNetValidator
         /// Checks if the property's value is a valid international standard recording code
         /// <para>Supported Data Types : Strings</para>
         /// </summary>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
+        /// <param name="model">The validator model to add more validations or sanitization</param>
         /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel IsISRC(this ValidationModel model, string errorMessage = null)
+        /// <returns>A Validator</returns>
+        public static Validator IsISRC(this Validator model, string errorMessage = null)
         {
             try
             {

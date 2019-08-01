@@ -9,10 +9,10 @@ namespace DotNetValidator
         /// Checks if the property's value is not null
         /// <para>Supported Data Types : All data types</para>
         /// </summary>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
+        /// <param name="model">The validator model to add more validations or sanitization</param>
         /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel IsNotNull(this ValidationModel model, string errorMessage = null)
+        /// <returns>A Validator</returns>
+        public static Validator IsNotNull(this Validator model, string errorMessage = null)
         {
             try
             {

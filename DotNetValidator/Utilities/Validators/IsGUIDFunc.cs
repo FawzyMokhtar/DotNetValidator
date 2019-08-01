@@ -9,12 +9,12 @@ namespace DotNetValidator
         /// Checks if the property's value is a valid global unique identifier (Guid)
         /// <para>Supported Data Types : Strings, Guids</para>
         /// </summary>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
+        /// <param name="model">The validator model to add more validations or sanitization</param>
         /// <param name="allowEmpty">Indicates whether empty guids are allowed or not, 
         /// by default it is not allowed</param>
         /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel IsGuid(this ValidationModel model, bool allowEmpty = false,
+        /// <returns>A Validator</returns>
+        public static Validator IsGuid(this Validator model, bool allowEmpty = false,
             string errorMessage = null)
         {
             try

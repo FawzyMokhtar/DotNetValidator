@@ -4,10 +4,10 @@ using System.Reflection;
 namespace DotNetValidator
 {
     /// <summary>
-    /// A validation model that holds all of validation errors for a given Property under a specific data model 
+    /// A validator model that holds all of validation errors for a given Property under a specific data model 
     /// against all validation roles associated with it
     /// </summary>
-    public class ValidationModel
+    public class Validator
     {
         private object Data { get; set; }
         private string PropertyName { get; set; }
@@ -19,12 +19,12 @@ namespace DotNetValidator
         internal bool IsOptional { get; set; }
 
         /// <summary>
-        /// Creates a new Validation model that can be used to validate or sanitize the given Property value
+        /// Creates a new validator model that can be used to validate or sanitize the given Property value
         /// using some validations or sanitization utility methods in the given data model
         /// </summary>
         /// <param name="data">The object data model to validate the given property</param>
         /// <param name="propertyName">The property name to be validated</param>
-        internal ValidationModel(object data, string propertyName)
+        internal Validator(object data, string propertyName)
         {
             Data = data;
             PropertyName = propertyName;
@@ -32,12 +32,12 @@ namespace DotNetValidator
         }
 
         /// <summary>
-        /// Creates a new Validation model that can be used to add more validations or sanitization to the current Property value 
+        /// Creates a new validator model that can be used to add more validations or sanitization to the current Property value 
         /// using some validation or sanitization utility methods, 
-        /// this Validation model will be initialized from the given Validation model
+        /// this validator model will be initialized from the given validator model
         /// </summary>
-        /// <param name="model">ValidationModel model to initialize the new Validation model</param>
-        internal ValidationModel(ValidationModel model)
+        /// <param name="model">Validator model to initialize the new Validator model</param>
+        internal Validator(Validator model)
         {
             Data = model.GetData();
             PropertyName = model.GetPropertyName();
@@ -45,15 +45,15 @@ namespace DotNetValidator
         }
 
         /// <summary>
-        /// Creates a new Validation model that can be used to validate or sanitize the given Property value
+        /// Creates a new validator model that can be used to validate or sanitize the given Property value
         /// using some validation or sanitization utility methods under the given data model
         /// </summary>
         /// <param name="data">The data model of type object</param>
         /// <param name="propertyName">The property name to be validated</param>
-        /// <returns>A new instance of validation model for the given Property under the given data model</returns>
-        public static ValidationModel Create(object data, string propertyName)
+        /// <returns>A new instance of validator model for the given Property under the given data model</returns>
+        public static Validator Create(object data, string propertyName)
         {
-            return new ValidationModel(data, propertyName);
+            return new Validator(data, propertyName);
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace DotNetValidator
         }
 
         /// <summary>
-        /// Gets the PropertyName for which the validation model was generated
+        /// Gets the PropertyName for which the validator model was generated
         /// </summary>
         /// <returns>string PropertyName</returns>
         internal string GetPropertyName()

@@ -14,7 +14,7 @@ namespace DotNetValidator
         /// <summary>
         /// Creates a new validation error for the given PropertyName and the list of validation error messages
         /// </summary>
-        /// <param name="propertyName">string PropertyName for which the validation model was generated</param>
+        /// <param name="propertyName">string PropertyName for which the validator model was generated</param>
         /// <param name="errorMessages">The list of validation error messages</param>
         internal ValidationError(string propertyName, List<string> errorMessages)
         {
@@ -23,7 +23,7 @@ namespace DotNetValidator
         }
 
         /// <summary>
-        /// Gets the PropertyName for which the validation model was generated
+        /// Gets the PropertyName for which the validator model was generated
         /// </summary>
         /// <returns>string PropertyName</returns>
         public string PropertyName

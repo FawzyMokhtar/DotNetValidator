@@ -10,11 +10,11 @@ namespace DotNetValidator
         /// returns true if there is no validation error, otherwise false
         /// <para>Any mutation to the value will not affect the original value</para>
         /// </summary>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
+        /// <param name="model">The validator model to add more validations or sanitization</param>
         /// <param name="customValidator">A custom validator that accepts an object value and 
         /// returns true if there is no validation error, otherwise false</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel CustomValidator(this ValidationModel model, Func<object, bool> customValidator,
+        /// <returns>A Validator</returns>
+        public static Validator CustomValidator(this Validator model, Func<object, bool> customValidator,
             string errorMessage)
         {
             try
@@ -36,11 +36,11 @@ namespace DotNetValidator
         /// <para>Any mutation to the value will not affect the original value</para>
         /// </summary>
         /// <typeparam name="TSource">The actual type of property</typeparam>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
+        /// <param name="model">The validator model to add more validations or sanitization</param>
         /// <param name="customValidator">A custom validator that accepts an object value and 
         /// returns true if there is no validation error, otherwise false</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel CustomValidator<TSource>(this ValidationModel model, 
+        /// <returns>A Validator</returns>
+        public static Validator CustomValidator<TSource>(this Validator model, 
             Func<TSource, bool> customValidator, string errorMessage)
         {
             try

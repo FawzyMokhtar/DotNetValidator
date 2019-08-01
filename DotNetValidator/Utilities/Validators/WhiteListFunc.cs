@@ -11,11 +11,11 @@ namespace DotNetValidator
         /// <para>Supported Data Types : All primitive data types</para>
         /// </summary>
         /// <typeparam name="TParam">The actual type of the property</typeparam>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
+        /// <param name="model">The validator model to add more validations or sanitization</param>
         /// <param name="whiteList">An array of white-list values</param>
         /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel WhiteList<TParam>(this ValidationModel model, TParam[] whiteList, string errorMessage = null)
+        /// <returns>A Validator</returns>
+        public static Validator WhiteList<TParam>(this Validator model, TParam[] whiteList, string errorMessage = null)
         {
             try
             {

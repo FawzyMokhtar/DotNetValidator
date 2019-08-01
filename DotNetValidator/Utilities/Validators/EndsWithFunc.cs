@@ -9,11 +9,11 @@ namespace DotNetValidator
         /// Checks if the property's value ends with the given string value
         /// <para>Supported Data Types : Strings</para>
         /// </summary>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
+        /// <param name="model">The validator model to add more validations or sanitization</param>
         /// <param name="str">The string value that the property's value should ends with</param>
         /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel EndsWith(this ValidationModel model, string str, string errorMessage = null)
+        /// <returns>A Validator</returns>
+        public static Validator EndsWith(this Validator model, string str, string errorMessage = null)
         {
             try
             {

@@ -47,15 +47,15 @@ namespace DotNetValidator.C.Test
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
-            var validation = ValidationModel.Create(model, "Name")
+            var validation = Validator.Create(model, "Name")
                 .BlackList(new object[] { "Fawzy Mokhtar", "Zain Fawzy" }, "This value is in black-list")
                 .MinLength(30)
                 .MaxLength(10);
 
-            var validation2 = ValidationModel.Create(model, "Age")
+            var validation2 = Validator.Create(model, "Age")
                 .WhiteList(new object[] { 25, "30" }, "This value is not in white-list");
 
-            var validation3 = ValidationModel.Create(model, "Name")
+            var validation3 = Validator.Create(model, "Name")
                 .WhiteList(new object[] { "Fawzy", "Zain" }, "This value is not in white-list")
                 .Contains("_")
                 .Contains(null, "FOO", "BAR", "NAR")
@@ -67,58 +67,58 @@ namespace DotNetValidator.C.Test
                 .IsASCII()
                 .IsBase64();
 
-            var validation4 = ValidationModel.Create(model, "Country")
+            var validation4 = Validator.Create(model, "Country")
                 .IsNotNull();
 
-            var validation5 = ValidationModel.Create(model, "CreditCard")
+            var validation5 = Validator.Create(model, "CreditCard")
                 .IsCreditCard();
 
-            var validation6 = ValidationModel.Create(model, "CV")
+            var validation6 = Validator.Create(model, "CV")
                 .IsFileUri();
 
-            var validation7 = ValidationModel.Create(model, "Email")
+            var validation7 = Validator.Create(model, "Email")
                 .IsEmail();
 
-            var validation8 = ValidationModel.Create(model, "DomainName")
+            var validation8 = Validator.Create(model, "DomainName")
                 .IsFQDN();
 
-            var validation9 = ValidationModel.Create(model, "IPv4")
+            var validation9 = Validator.Create(model, "IPv4")
                 .IsIP(IPVersion.IPv4);
 
-            var validation10 = ValidationModel.Create(model, "IPv6")
+            var validation10 = Validator.Create(model, "IPv6")
                 .IsIP(IPVersion.IPv6);
 
-            var validation11 = ValidationModel.Create(model, "BookNumber")
+            var validation11 = Validator.Create(model, "BookNumber")
                 .IsISBN();
 
-            var validation12 = ValidationModel.Create(model, "SerialNumber")
+            var validation12 = Validator.Create(model, "SerialNumber")
                 .IsISSN();
 
-            var validation13 = ValidationModel.Create(model, "Location")
+            var validation13 = Validator.Create(model, "Location")
                 .IsLatLang();
 
-            var validation14 = ValidationModel.Create(model, "MacAddress")
+            var validation14 = Validator.Create(model, "MacAddress")
                 .IsMACAddress();
 
-            var validation15 = ValidationModel.Create(model, "Port")
+            var validation15 = Validator.Create(model, "Port")
                 .IsPort();
 
-            var validation16 = ValidationModel.Create(model, "PostalCode")
+            var validation16 = Validator.Create(model, "PostalCode")
                 .IsPostalCode();
 
-            var validation17 = ValidationModel.Create(model, "ProfileUrl")
+            var validation17 = Validator.Create(model, "ProfileUrl")
                 .IsUrl();
 
-            var validation18 = ValidationModel.Create(model, "Id")
+            var validation18 = Validator.Create(model, "Id")
                 .IsGuid();
 
-            var validation19 = ValidationModel.Create(model, "DateOfBirth")
+            var validation19 = Validator.Create(model, "DateOfBirth")
                 .IsInRange(new DateTime(1990, 01, 01), new DateTime(2000, 01, 01));
 
-            var validation20 = ValidationModel.Create(model, "AvailableTime")
+            var validation20 = Validator.Create(model, "AvailableTime")
                 .IsInRange(new TimeSpan(08, 00, 00), new TimeSpan(23, 00, 00));
 
-            var validation21 = ValidationModel.Create(model, "Custom")
+            var validation21 = Validator.Create(model, "Custom")
                 .CustomValidator((object value) => !(value.ToString().Length > 5)
                                  , "value is invalid during custom validator 1")
                 .CustomValidator((string value) => !(value.ToString().Length > 5)

@@ -12,10 +12,10 @@ namespace DotNetValidator
         /// Checks if the property's value is a valid ip address
         /// <para>Supported Data Types : Strings</para>
         /// </summary>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
+        /// <param name="model">The validator model to add more validations or sanitization</param>
         /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel IsIP(this ValidationModel model, string errorMessage = null)
+        /// <returns>A Validator</returns>
+        public static Validator IsIP(this Validator model, string errorMessage = null)
         {
             try
             {
@@ -37,11 +37,11 @@ namespace DotNetValidator
         /// Checks if the property's value is a valid ip address for the given ip version
         /// <para>Supported Data Types : Strings</para>
         /// </summary>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
+        /// <param name="model">The validator model to add more validations or sanitization</param>
         /// <param name="ipVersion">The version of the ip address</param>
         /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel IsIP(this ValidationModel model, IPVersion ipVersion, string errorMessage = null)
+        /// <returns>A Validator</returns>
+        public static Validator IsIP(this Validator model, IPVersion ipVersion, string errorMessage = null)
         {
             var version = ipVersion == IPVersion.IPv4 ? "v4" : "v6";
             try

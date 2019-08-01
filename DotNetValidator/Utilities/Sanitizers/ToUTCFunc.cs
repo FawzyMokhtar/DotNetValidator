@@ -8,9 +8,9 @@ namespace DotNetValidator
         /// A Sanitizer that converts the current Property value to a coordinate universal time DateTime
         /// <para>Supported Data Types : Strings, Dates</para>
         /// </summary>
-        /// <param name="model">The validation model to add more validations or sanitization</param>
-        /// <returns>A ValidationModel</returns>
-        public static ValidationModel ToUtc(this ValidationModel model)
+        /// <param name="model">The validator model to add more validations or sanitization</param>
+        /// <returns>A Validator</returns>
+        public static Validator ToUtc(this Validator model)
         {
             try
             {
