@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DotNetValidator
+﻿namespace DotNetValidator
 {
     /// <summary>
     /// The versions of ip addresses

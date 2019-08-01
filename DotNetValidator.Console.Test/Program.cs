@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using DotNetValidator;
-using Newtonsoft.Json;
 using System.Diagnostics;
 
 namespace DotNetValidator.C.Test
@@ -126,9 +121,9 @@ namespace DotNetValidator.C.Test
             var validation21 = ValidationModel.Create(model, "Custom")
                 .CustomValidator((object value) => !(value.ToString().Length > 5)
                                  , "value is invalid during custom validator 1")
-                .CustomValidator((string value) => !(value.Length > 5)
+                .CustomValidator((string value) => !(value.ToString().Length > 5)
                                  , "value is invalid during custom validator 2")
-                .CustomValidator((string value) => !(value.Length < 5)
+                .CustomValidator((string value) => !(value.ToString().Length < 5)
                                  , "value is invalid during custom validator 3");
 
             var errors = ValidationResult.Validate(validation, validation2, validation3, validation4,

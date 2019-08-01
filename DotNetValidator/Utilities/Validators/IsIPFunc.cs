@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Net;
 using DotNetValidator.Models.Errors;
-using DotNetValidator.Helpers;
 using System.Net.Sockets;
 
 namespace DotNetValidator

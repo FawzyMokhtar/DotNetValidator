@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DotNetValidator.Helpers
+﻿namespace DotNetValidator.Helpers
 {
     /// <summary>
     /// Using Luhn algorithm (Mod 10) to validate credit cards
