@@ -39,7 +39,7 @@ namespace DotNetValidator
         /// <param name="customSanitizer">A custom sanitizer that accepts a TSource value and returns a new TSource value 
         /// that has been modified</param>
         /// <returns>A ValidationModel</returns>
-        public static ValidationModel CustomSanitizer<T, TSource>(this ValidationModel model, Func<TSource, TSource> customSanitizer)
+        public static ValidationModel CustomSanitizer<TSource>(this ValidationModel model, Func<TSource, TSource> customSanitizer)
         {
             try
             {

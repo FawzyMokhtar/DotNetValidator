@@ -46,6 +46,7 @@ namespace DotNetValidator.C.Test
                 Id = "00000000-0000-0000-0000-000000000000",
                 DateOfBirth = "1994-07-16",
                 AvailableTime = "10:15",
+                Custom = "Custom validator test",
             };
 
             Stopwatch sw = new Stopwatch();
@@ -122,10 +123,18 @@ namespace DotNetValidator.C.Test
             var validation20 = ValidationModel.Create(model, "AvailableTime")
                 .IsInRange(new TimeSpan(08, 00, 00), new TimeSpan(23, 00, 00));
 
+            var validation21 = ValidationModel.Create(model, "Custom")
+                .CustomValidator((object value) => !(value.ToString().Length > 5)
+                                 , "value is invalid during custom validator 1")
+                .CustomValidator((string value) => !(value.Length > 5)
+                                 , "value is invalid during custom validator 2")
+                .CustomValidator((string value) => !(value.Length < 5)
+                                 , "value is invalid during custom validator 3");
+
             var errors = ValidationResult.Validate(validation, validation2, validation3, validation4,
                 validation5, validation6, validation7, validation8, validation9, validation10,
                 validation11, validation12, validation13, validation14, validation15, validation16,
-                validation17, validation18, validation19, validation20);
+                validation17, validation18, validation19, validation20, validation21);
 
             sw.Stop();
 
@@ -197,6 +206,7 @@ namespace DotNetValidator.C.Test
         public string Id { get; set; }
         public string DateOfBirth { get; set; }
         public string AvailableTime { get; set; }
+        public string Custom { get; set; }
         public Country Country { get; set; }
     }
 

@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\CreditCardVerification.cs" />
+    <Compile Include="Helpers\Serializer.cs" />
     <Compile Include="Models\Misc\IPVersion.cs" />
     <Compile Include="Models\Errors\DefaultErrorMessages.cs" />
     <Compile Include="Models\Errors\ValidationResult.cs" />
@@ -55,6 +59,7 @@
     <Compile Include="Utilities\Sanitizers\TrimStartFunc.cs" />
     <Compile Include="Utilities\Sanitizers\TrimFunc.cs" />
     <Compile Include="Utilities\Sanitizers\ToLowerFunc.cs" />
+    <Compile Include="Utilities\Validators\CustomValidatorFunc.cs" />
     <Compile Include="Utilities\Validators\EndsWithFunc.cs" />
     <Compile Include="Utilities\Validators\IsEmailFunc.cs" />
     <Compile Include="Utilities\Validators\IsGuidFunc.cs" />
@@ -88,6 +93,8 @@
     <Compile Include="Utilities\Validators\OptionalFunc.cs" />
     <Compile Include="Utilities\Validators\BlackListFunc.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
