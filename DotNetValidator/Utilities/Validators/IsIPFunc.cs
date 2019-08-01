@@ -9,45 +9,45 @@ namespace DotNetValidator
     public static partial class ValidationUtility
     {
         /// <summary>
-        /// Checks if the property's value is a valid ip address
-        /// <para>Supported Data Types : Strings</para>
+        /// Checks if the property's value is a valid ip address.
+        /// <para>Supported Data Types: Strings.</para>
         /// </summary>
-        /// <param name="model">The validator model to add more validations or sanitization</param>
-        /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A Validator</returns>
-        public static Validator IsIP(this Validator model, string errorMessage = null)
+        /// <param name="validator">The validator to add more validations or sanitization.</param>
+        /// <param name="errorMessage">An optional validation error message.</param>
+        /// <returns>A Validator.</returns>
+        public static Validator IsIP(this Validator validator, string errorMessage = null)
         {
             try
             {
-                var value = model.GetValue();
-                if (!model.IsOptional || value != null)
+                var value = validator.GetValue();
+                if (!validator.IsOptional || value != null)
                 {
                     if (!IPAddress.TryParse(value.ToString(), out var iPAddress))
-                        model.AddError(errorMessage ?? DefaultErrorMessages.IsIP());
+                        validator.AddError(errorMessage ?? DefaultErrorMessages.IsIP());
                 }
             }
             catch (Exception)
             {
-                model.AddError(errorMessage ?? DefaultErrorMessages.IsIP());
+                validator.AddError(errorMessage ?? DefaultErrorMessages.IsIP());
             }
-            return model;
+            return validator;
         }
 
         /// <summary>
-        /// Checks if the property's value is a valid ip address for the given ip version
-        /// <para>Supported Data Types : Strings</para>
+        /// Checks if the property's value is a valid ip address for the given ip version.
+        /// <para>Supported Data Types: Strings.</para>
         /// </summary>
-        /// <param name="model">The validator model to add more validations or sanitization</param>
-        /// <param name="ipVersion">The version of the ip address</param>
-        /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A Validator</returns>
-        public static Validator IsIP(this Validator model, IPVersion ipVersion, string errorMessage = null)
+        /// <param name="validator">The validator to add more validations or sanitization.</param>
+        /// <param name="ipVersion">The version of the ip address.</param>
+        /// <param name="errorMessage">An optional validation error message.</param>
+        /// <returns>A Validator.</returns>
+        public static Validator IsIP(this Validator validator, IPVersion ipVersion, string errorMessage = null)
         {
             var version = ipVersion == IPVersion.IPv4 ? "v4" : "v6";
             try
             {
-                var value = model.GetValue();
-                if (!model.IsOptional || value != null)
+                var value = validator.GetValue();
+                if (!validator.IsOptional || value != null)
                 {
                     if (
                         // is a valid ip address
@@ -68,14 +68,14 @@ namespace DotNetValidator
                          ipVersion == IPVersion.IPv6 && iPAddress.AddressFamily != AddressFamily.InterNetworkV6
                         )
                        )
-                        model.AddError(errorMessage ?? DefaultErrorMessages.IsIP(version));
+                        validator.AddError(errorMessage ?? DefaultErrorMessages.IsIP(version));
                 }
             }
             catch (Exception)
             {
-                model.AddError(errorMessage ?? DefaultErrorMessages.IsIP(version));
+                validator.AddError(errorMessage ?? DefaultErrorMessages.IsIP(version));
             }
-            return model;
+            return validator;
         }
     }
 }

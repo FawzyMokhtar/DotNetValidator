@@ -6,84 +6,84 @@ namespace DotNetValidator
     public static partial class ValidationUtility
     {
         /// <summary>
-        /// Checks if the property's value is not lower than the given minimum  value
-        /// <para>Supported Data Types : Doubles, Decimals, Floats, Singles, 
-        /// Longs, Integers, Shorts and Bytes</para>
+        /// Checks if the property's value is not lower than the given minimum value
+        /// <para>Supported Data Types: Doubles, Decimals, Floats, Singles, 
+        /// Longs, Integers, Shorts and Bytes.</para>
         /// </summary>
-        /// <param name="model">The validator model to add more validations or sanitization</param>
-        /// <param name="minValue">The minimum value</param>
-        /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A Validator</returns>
-        public static Validator Min(this Validator model, double minValue, string errorMessage = null)
+        /// <param name="validator">The validator to add more validations or sanitization.</param>
+        /// <param name="minValue">The minimum value.</param>
+        /// <param name="errorMessage">An optional validation error message.</param>
+        /// <returns>A Validator.</returns>
+        public static Validator Min(this Validator validator, double minValue, string errorMessage = null)
         {
             try
             {
-                var value = model.GetValue();
-                if (!model.IsOptional || value != null)
+                var value = validator.GetValue();
+                if (!validator.IsOptional || value != null)
                 {
                     if (double.Parse(value.ToString()) < minValue)
-                        model.AddError(errorMessage ?? DefaultErrorMessages.Min(minValue));
+                        validator.AddError(errorMessage ?? DefaultErrorMessages.Min(minValue));
                 }
             }
             catch (Exception)
             {
-                model.AddError(errorMessage ?? DefaultErrorMessages.Min(minValue));
+                validator.AddError(errorMessage ?? DefaultErrorMessages.Min(minValue));
             }
-            return model;
+            return validator;
         }
 
         /// <summary>
-        /// Checks if the property's value is not lower than the given minimum  value
-        /// <para>Supported Data Types : DateTimes</para>
+        /// Checks if the property's value is not lower than the given minimum value.
+        /// <para>Supported Data Types: DateTimes.</para>
         /// </summary>
-        /// <param name="model">The validator model to add more validations or sanitization</param>
-        /// <param name="minTime">The minimum dateTime</param>
-        /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A Validator</returns>
-        public static Validator Min(this Validator model, DateTime minDateTime,
+        /// <param name="validator">The validator to add more validations or sanitization.</param>
+        /// <param name="minTime">The minimum dateTime.</param>
+        /// <param name="errorMessage">An optional validation error message.</param>
+        /// <returns>A Validator.</returns>
+        public static Validator Min(this Validator validator, DateTime minDateTime,
             string errorMessage = null)
         {
             try
             {
-                var value = model.GetValue();
-                if (!model.IsOptional || value != null)
+                var value = validator.GetValue();
+                if (!validator.IsOptional || value != null)
                 {
                     if (Convert.ToDateTime(value.ToString()) < minDateTime)
-                        model.AddError(errorMessage ?? DefaultErrorMessages.Min(minDateTime));
+                        validator.AddError(errorMessage ?? DefaultErrorMessages.Min(minDateTime));
                 }
             }
             catch (Exception)
             {
-                model.AddError(errorMessage ?? DefaultErrorMessages.Min(minDateTime));
+                validator.AddError(errorMessage ?? DefaultErrorMessages.Min(minDateTime));
             }
-            return model;
+            return validator;
         }
 
         /// <summary>
-        /// Checks if the property's value is not lower than the given minimum  value
-        /// <para>Supported Data Types : TimeSpans</para>
+        /// Checks if the property's value is not lower than the given minimum value.
+        /// <para>Supported Data Types: TimeSpans.</para>
         /// </summary>
-        /// <param name="model">The validator model to add more validations or sanitization</param>
-        /// <param name="minTime">The minimum time</param>
-        /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A Validator</returns>
-        public static Validator Min(this Validator model, TimeSpan minTime,
+        /// <param name="validator">The validator to add more validations or sanitization.</param>
+        /// <param name="minTime">The minimum time.</param>
+        /// <param name="errorMessage">An optional validation error message.</param>
+        /// <returns>A Validator.</returns>
+        public static Validator Min(this Validator validator, TimeSpan minTime,
             string errorMessage = null)
         {
             try
             {
-                var value = model.GetValue();
-                if (!model.IsOptional || value != null)
+                var value = validator.GetValue();
+                if (!validator.IsOptional || value != null)
                 {
                     if (TimeSpan.Parse(value.ToString()) < minTime)
-                        model.AddError(errorMessage ?? DefaultErrorMessages.Min(minTime));
+                        validator.AddError(errorMessage ?? DefaultErrorMessages.Min(minTime));
                 }
             }
             catch (Exception)
             {
-                model.AddError(errorMessage ?? DefaultErrorMessages.Min(minTime));
+                validator.AddError(errorMessage ?? DefaultErrorMessages.Min(minTime));
             }
-            return model;
+            return validator;
         }
     }
 }

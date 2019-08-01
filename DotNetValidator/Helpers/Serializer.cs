@@ -4,7 +4,7 @@ using System;
 namespace DotNetValidator.Helpers
 {
     /// <summary>
-    /// Json Serializer Helper
+    /// Json Serializer Helper.
     /// </summary>
     internal static class Serializer
     {

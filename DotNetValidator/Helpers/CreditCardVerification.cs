@@ -1,7 +1,7 @@
 ﻿namespace DotNetValidator.Helpers
 {
     /// <summary>
-    /// Using Luhn algorithm (Mod 10) to validate credit cards
+    /// Using Luhn algorithm (Mod 10) to validate credit cards.
     /// </summary>
     internal static class CreditCardVerification
     {

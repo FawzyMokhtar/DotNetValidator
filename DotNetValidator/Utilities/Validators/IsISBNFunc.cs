@@ -6,26 +6,26 @@ namespace DotNetValidator
     public static partial class ValidationUtility
     {
         /// <summary>
-        /// Checks if the property's value is a valid international standard book number
-        /// <para>Supported Data Types : Strings</para>
+        /// Checks if the property's value is a valid international standard book number.
+        /// <para>Supported Data Types: Strings.</para>
         /// </summary>
-        /// <param name="model">The validator model to add more validations or sanitization</param>
-        /// <param name="errorMessage">An optional validation error message</param>
-        /// <returns>A Validator</returns>
-        public static Validator IsISBN(this Validator model, string errorMessage = null)
+        /// <param name="validator">The validator to add more validations or sanitization.</param>
+        /// <param name="errorMessage">An optional validation error message.</param>
+        /// <returns>A Validator.</returns>
+        public static Validator IsISBN(this Validator validator, string errorMessage = null)
         {
             try
             {
-                var value = model.GetValue();
-                if (!model.IsOptional || value != null)
+                var value = validator.GetValue();
+                if (!validator.IsOptional || value != null)
                 {
                     var isbn = value.ToString();
                     // length must be 10 
                     var n = isbn.Length;
                     if (n != 10)
                     {
-                        model.AddError(errorMessage ?? DefaultErrorMessages.IsISBN);
-                        return model;
+                        validator.AddError(errorMessage ?? DefaultErrorMessages.IsISBN);
+                        return validator;
                     }
 
                     // Computing weighted sum of 
@@ -37,8 +37,8 @@ namespace DotNetValidator
 
                         if (0 > digit || 9 < digit)
                         {
-                            model.AddError(errorMessage ?? DefaultErrorMessages.IsISBN);
-                            return model;
+                            validator.AddError(errorMessage ?? DefaultErrorMessages.IsISBN);
+                            return validator;
                         }
 
                         sum += (digit * (10 - i));
@@ -48,8 +48,8 @@ namespace DotNetValidator
                     char last = isbn[9];
                     if (last != 'X' && (last < '0' || last > '9'))
                     {
-                        model.AddError(errorMessage ?? DefaultErrorMessages.IsISBN);
-                        return model;
+                        validator.AddError(errorMessage ?? DefaultErrorMessages.IsISBN);
+                        return validator;
                     }
 
                     // If last digit is 'X', add 10 
@@ -60,16 +60,16 @@ namespace DotNetValidator
                     // of digits is divisible by 11. 
                     if (sum % 11 != 0)
                     {
-                        model.AddError(errorMessage ?? DefaultErrorMessages.IsISBN);
-                        return model;
+                        validator.AddError(errorMessage ?? DefaultErrorMessages.IsISBN);
+                        return validator;
                     }
                 }
             }
             catch (Exception)
             {
-                model.AddError(errorMessage ?? DefaultErrorMessages.IsISBN);
+                validator.AddError(errorMessage ?? DefaultErrorMessages.IsISBN);
             }
-            return model;
+            return validator;
         }
     }
 }

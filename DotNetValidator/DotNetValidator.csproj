@@ -49,7 +49,7 @@
     <Compile Include="Models\Errors\DefaultErrorMessages.cs" />
     <Compile Include="Models\Errors\ValidationResult.cs" />
     <Compile Include="Models\Errors\ValidationError.cs" />
-    <Compile Include="Models\Validators\ValidationModel.cs" />
+    <Compile Include="Models\Validators\Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Sanitizers\ToUtcFunc.cs" />
     <Compile Include="Utilities\Sanitizers\ToDateFunc.cs" />
