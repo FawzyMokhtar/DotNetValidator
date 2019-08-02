@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>DotNetValidator</AssemblyName>
+    <RootNamespace>DotNetValidator</RootNamespace>
+    <Title>DotNet Validator</Title>
+    <Authors>Fawzy Mokhtar</Authors>
+    <Company>Al-Mokhtar Systems</Company>
+    <PackageId>DotNetValidator</PackageId>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>A list of powerful validation utilities, that makes it easier to validate a data model according some validation roles.</Description>
+    <Copyright>Copyright ©  2019</Copyright>
+    <PackageTags>.NET Validator Data Validation Model Validation Web API Validation</PackageTags>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0</FileVersion>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <None Include="licenses\LICENSE.md" Pack="true" PackagePath=""/>
+  </ItemGroup>
+
+</Project>
