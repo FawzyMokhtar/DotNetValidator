@@ -52,7 +52,6 @@
     <Compile Include="Models\Validators\Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Sanitizers\ToUtcFunc.cs" />
-    <Compile Include="Utilities\Sanitizers\ToDateFunc.cs" />
     <Compile Include="Utilities\Sanitizers\ToUpperFunc.cs" />
     <Compile Include="Utilities\Sanitizers\TrimEndFunc.cs" />
     <Compile Include="Utilities\Sanitizers\CustomSanitizerFunc.cs" />
@@ -70,7 +69,7 @@
     <Compile Include="Utilities\Validators\IsPostalCodeFunc.cs" />
     <Compile Include="Utilities\Validators\IsPortFunc.cs" />
     <Compile Include="Utilities\Validators\IsMACAddressFunc.cs" />
-    <Compile Include="Utilities\Validators\IsLatLangFunc.cs" />
+    <Compile Include="Utilities\Validators\IsLatLongFunc.cs" />
     <Compile Include="Utilities\Validators\IsISSNFunc.cs" />
     <Compile Include="Utilities\Validators\IsISRCFunc.cs" />
     <Compile Include="Utilities\Validators\IsISBNFunc.cs" />
@@ -94,7 +93,6 @@
     <Compile Include="Utilities\Validators\BlackListFunc.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="licenses\LICENSE.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
