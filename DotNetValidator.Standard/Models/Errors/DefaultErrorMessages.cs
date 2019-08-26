@@ -179,20 +179,20 @@ namespace DotNetValidator.Models.Errors
             return $"The length should be at most {maxLength} characters";
         }
 
-        public static string Contains(string str)
+        public static string Contains(string token)
         {
-            return $"Should contains the value {str}";
+            return $"Should contains the value {token}";
         }
 
-        public static string Contains(params string[] strs)
+        public static string Contains(params string[] tokens)
         {
             var concatStr = "[";
-            for (int i = 0; i < strs.Length; i++)
+            for (int i = 0; i < tokens.Length; i++)
             {
-                if (i == strs.Length - 1)
-                    concatStr += strs[i];
+                if (i == tokens.Length - 1)
+                    concatStr += tokens[i];
                 else
-                    concatStr += $"{strs[i]}, ";
+                    concatStr += $"{tokens[i]}, ";
             }
             concatStr += "]";
 
@@ -204,14 +204,14 @@ namespace DotNetValidator.Models.Errors
             return $"Does not match the pattern {pattern}";
         }
 
-        public static string StartsWith(string str)
+        public static string StartsWith(string token)
         {
-            return $"Should starts with the value {str}";
+            return $"Should starts with the value {token}";
         }
 
-        public static string EndsWith(string str)
+        public static string EndsWith(string token)
         {
-            return $"Should ends with the value {str}";
+            return $"Should ends with the value {token}";
         }
 
         public static string IsIP()
