@@ -11,13 +11,13 @@ namespace DotNetValidator
         /// <para>Supported Data Types: Strings.</para>
         /// </summary>
         /// <param name="validator">The validator to add more validations or sanitization.</param>
-        /// <param name="traimChars">The set of characters that will be trimmed.</param>
+        /// <param name="trimChars">The set of characters that will be trimmed.</param>
         /// <returns>A Validator.</returns>
-        public static Validator TrimEnd(this Validator validator, params char[] traimChars)
+        public static Validator TrimEnd(this Validator validator, params char[] trimChars)
         {
             try
             {
-                validator.SetValue(validator.GetValue().ToString().TrimEnd(traimChars));
+                validator.SetValue(validator.GetValue().ToString().TrimEnd(trimChars));
             }
             catch (Exception)
             {
