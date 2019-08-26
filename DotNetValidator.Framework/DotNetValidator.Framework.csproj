@@ -70,7 +70,7 @@
     <Compile Include="Utilities\Validators\IsPostalCodeFunc.cs" />
     <Compile Include="Utilities\Validators\IsPortFunc.cs" />
     <Compile Include="Utilities\Validators\IsMACAddressFunc.cs" />
-    <Compile Include="Utilities\Validators\IsLatLangFunc.cs" />
+    <Compile Include="Utilities\Validators\IsLatLongFunc.cs" />
     <Compile Include="Utilities\Validators\IsISSNFunc.cs" />
     <Compile Include="Utilities\Validators\IsISRCFunc.cs" />
     <Compile Include="Utilities\Validators\IsISBNFunc.cs" />
