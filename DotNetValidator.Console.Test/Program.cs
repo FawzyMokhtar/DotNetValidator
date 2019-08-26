@@ -95,7 +95,7 @@ namespace DotNetValidator.C.Test
                 .IsISSN();
 
             var validation13 = Validator.Create(model, "Location")
-                .IsLatLang();
+                .IsLatLong();
 
             var validation14 = Validator.Create(model, "MacAddress")
                 .IsMACAddress();

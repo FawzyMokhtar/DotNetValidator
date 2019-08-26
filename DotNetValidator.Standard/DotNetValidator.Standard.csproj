@@ -9,23 +9,25 @@
     <Company>Al-Mokhtar Systems</Company>
     <PackageId>DotNetValidator</PackageId>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>DotNet Validator is a .NET library that contains a set of utility methods which could be used to validate or sanitize .NET data-models.</Description>
     <Copyright>Copyright ©  2019</Copyright>
     <PackageTags>Validation .NET-Validation Validator Data-Validation Model-Validation Web-API Sanitization Sanitize .NET</PackageTags>
-    <AssemblyVersion>1.0.0</AssemblyVersion>
-    <FileVersion>1.0.0</FileVersion>
-    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <FileVersion>2.0.0</FileVersion>
     <PackageProjectUrl>https://dotnetvalidator.github.io</PackageProjectUrl>
     <RepositoryUrl>https://github.com/DotNetValidator/DotNetValidator</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>See https://dotnetvalidator.github.io/docs/v1.0.0/release-notes</PackageReleaseNotes>
+    <PackageReleaseNotes>See https://dotnetvalidator.github.io/docs/v2.0.0/release-notes</PackageReleaseNotes>
+    <PackageIconUrl>https://raw.githubusercontent.com/DotNetValidator/DotNetValidator/master/ICON.ico</PackageIconUrl>
+    <Version>2.0.0</Version>
+    
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
-    <None Include="licenses\LICENSE.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>

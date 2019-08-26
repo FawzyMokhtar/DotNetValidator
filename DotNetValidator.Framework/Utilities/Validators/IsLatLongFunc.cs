@@ -13,7 +13,7 @@ namespace DotNetValidator
         /// <param name="validator">The validator to add more validations or sanitization.</param>
         /// <param name="errorMessage">An optional validation error message.</param>
         /// <returns>A Validator.</returns>
-        public static Validator IsLatLang(this Validator validator, string errorMessage = null)
+        public static Validator IsLatLong(this Validator validator, string errorMessage = null)
         {
             try
             {

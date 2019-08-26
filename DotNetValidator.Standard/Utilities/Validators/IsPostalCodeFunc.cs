@@ -9,7 +9,7 @@ namespace DotNetValidator
         /// <summary>
         /// Checks if the property's value is a valid postal code,
         /// note: this method uses both the 5-digits and 9-digits formates,
-        /// some `12345` & `12345-6789` are both valid.
+        /// so `12345` & `12345-6789` are both valid.
         /// <para>Supported Data Types: Strings, Integers.</para>
         /// </summary>
         /// <param name="validator">The validator to add more validations or sanitization.</param>
