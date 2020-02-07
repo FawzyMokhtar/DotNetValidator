@@ -1,0 +1,94 @@
+<app-post *ngIf="post" [post]="post" [previous]="previous" [next]="next">
+
+    <!-- Article -->
+    <ng-container class="article">
+        <p>
+            An <code>extension</code> validation <code>method</code> that creates a custom validation method that
+            accepts a <code>generic-type</code> value and
+            returns <code>true</code> if there is no validation error, otherwise <code>false</code>.
+        </p>
+        <div class="alert alert-warning">
+            <i><strong>Note :</strong> Any mutation to the value will not affect the original value</i>.
+        </div>
+        <div>
+            <h2 class="section-heading">
+                Definition
+                <a id="definition" aria-hidden="true" class="section-heading-ref"></a>
+            </h2>
+            <ul>
+                <li>
+                    <h3>
+                        <code>.CustomValidator&lt;TSource&gt;(Func&lt;TSource, bool&gt; customValidator, string: errorMessage)</code>
+                    </h3>
+                    <h3>Supported data types :</h3>
+                    <ul>
+                        <li>
+                            Any data type.
+                        </li>
+                    </ul>
+                    <h3>Parameters :</h3>
+                    <ul>
+                        <li>
+                            <code>customValidator</code> : A custom validator that accepts an <code>TSource</code> value
+                            and returns <code>true</code> if there is no validation error, otherwise <code>false</code>.
+                        </li>
+                        <li>
+                            <code>errorMessage</code> : A validation error message.
+                        </li>
+                    </ul>
+
+                    <h3>Returns :</h3>
+                    <ul>
+                        <li>
+                            A <code>Validator</code> to add more <code>validation</code> or <code>sanitization</code>.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="section-heading">
+                Examples
+                <a id="examples" aria-hidden="true" class="section-heading-ref"></a>
+            </h2>
+            <ul>
+                <li>
+                    <h3>
+                        Example 1 :
+                        <a id="example1" aria-hidden="true" class="section-heading-ref"></a>
+                    </h3>
+                    <strong>To do : </strong>
+                    <i>Validate that the person's country shouldn't be <code>null</code>.
+                    </i>
+                    <p>
+                        Let's start with creating a new class called <code>Person</code> and a class called
+                        <code>Country</code>.
+                    </p>
+                    <pre class="code-block">
+                        <code appHighlight>{{person1}}</code>
+                    </pre>
+                    <pre class="code-block">
+                        <code appHighlight>{{country1}}</code>
+                    </pre>
+                    <pre class="code-block">
+                        <code appHighlight>{{example1}}</code>
+                    </pre>
+                </li>
+                <li>
+                    <h3>
+                        Example 2 :
+                        <a id="example2" aria-hidden="true" class="section-heading-ref"></a>
+                    </h3>
+                    <strong>To do : </strong>
+                    <i>Validate that the person's country code shouldn't be <code>null</code>.
+                    </i>
+                    <pre class="code-block">
+                        <code appHighlight>{{example2}}</code>
+                    </pre>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <!-- End Article -->
+
+</app-post>

@@ -1,0 +1,13 @@
+/* Import highlight.js style from node_modules */
+@import "highlight.js/scss/vs.scss";
+
+.code-block {
+  background-color: #f0f0f0;
+  display: grid;
+}
+
+.hljs {
+  padding: 0;
+  background-color: #f0f0f0;
+  display: inline;
+}

@@ -1,0 +1,25 @@
+.footer {
+  padding-bottom: 1rem;
+  background-color: $footer-bg;
+  color: $footer-color;
+  .footer-links {
+    margin-bottom: 2rem;
+    .navbar {
+      display: flex;
+      flex-direction: row;
+
+      a {
+        color: $anchor-inactive-color;
+
+        &:hover {
+          color: $footer-color;
+        }
+      }
+    }
+  }
+
+  .footer-copy-right {
+    display: flex;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,55 @@
+<app-post *ngIf="post" [post]="post" [previous]="previous" [next]="next">
+
+    <!-- Article -->
+    <ng-container class="article">
+        <p>
+            A <code>public class ValidationError</code> that resulting from validating a given Property under a specific
+            data model
+            against all validation roles associated with it.
+        </p>
+        <div>
+            <h2 class="section-heading">
+                Members
+                <a id="members" aria-hidden="true" class="section-heading-ref"></a>
+            </h2>
+            <ul>
+                <li>
+                    <h3>
+                        <code>PropertyName</code>
+                        <a id="property-name" aria-hidden="true" class="section-heading-ref"></a>
+                    </h3>
+                    <p>
+                        A <code>public property</code> that gets the property name for which the validator was
+                        generated.
+                    </p>
+                    <h3>Returns :</h3>
+                    <ul>
+                        <li>
+                            A <code>string</code>.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>
+                        <code>ErrorMessages</code>
+                        <a id="error-messages" aria-hidden="true" class="section-heading-ref"></a>
+                    </h3>
+                    <p>
+                        A <code>public property</code> that gets the list of validation error messages resulting from
+                        validating the current model's
+                        <code>PropertyName</code>
+                        against all the validation roles.
+                    </p>
+                    <h3>Returns :</h3>
+                    <ul>
+                        <li>
+                            A <code>List&lt;string&gt;</code>.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <!-- End Article -->
+
+</app-post>

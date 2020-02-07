@@ -1,0 +1,50 @@
+<app-post *ngIf="post" [post]="post" [previous]="previous" [next]="next">
+
+    <!-- Article -->
+    <ng-container class="article">
+        <p>
+            This version has <strong>no new features</strong>, but has <strong>some breaking changes</strong>.
+        </p>
+        <div>
+            <h2 class="section-heading">
+                Features
+            </h2>
+            <ul>
+                <li>
+                    No new features added.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="section-heading">
+                Breaking Changes
+            </h2>
+            <ul>
+                <li>
+                    Change <code>.IsLatLang()</code> validation method to <code>.IsLatLong()</code>.
+                </li>
+                <li>
+                    Remove the <code>.ToDateTime()</code> sanitization method because it's not useful to use in
+                    <a href="https://dotnet.microsoft.com/languages" target="blank">
+                        .NET Programming Languages
+                    </a>.
+                </li>
+                <li>
+                    Remove the unnecessary overloads from the <code>.CustomValidator()</code> validation method &
+                    the
+                    <code>.CustomSanitizer()</code>
+                    sanitization method, since both are accepting a <code>generic-type</code> and there is no need
+                    for
+                    any overloads
+                    that takes a <code>static-type</code>.
+                </li>
+                <li>
+                    Change <code>str</code> parameter word to <code>token</code> in <code>.Contains()</code>,
+                    <code>.StartsWith()</code> and <code>EndsWith()</code> validation methods.
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <!-- End Article -->
+
+</app-post>

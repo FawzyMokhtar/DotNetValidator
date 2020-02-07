@@ -1,0 +1,31 @@
+<!-- Post Wrapper -->
+<div class="post-wrapper">
+
+    <div class="post">
+        <!-- Article -->
+        <app-post-article [title]="post.title">
+
+            <!-- Get article from post container -->
+            <ng-container class="article">
+
+                <!-- Pass article to article component -->
+                <ng-content select=".article"></ng-content>
+
+            </ng-container>
+
+        </app-post-article>
+        <!-- End Article -->
+
+
+        <!-- Section Navigator -->
+        <app-post-section-navigator *ngIf="post.sections && post.sections.length" [route]="post.route"
+            [sections]="post.sections"></app-post-section-navigator>
+        <!-- End Section Navigator -->
+    </div>
+
+    <!-- Post Navigator -->
+    <app-post-navigator [previous]="previous" [next]="next"></app-post-navigator>
+    <!-- End Post Navigator -->
+
+</div>
+<!-- Post Wrapper -->
