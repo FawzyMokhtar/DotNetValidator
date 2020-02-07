@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve -o --port 4444",
     "restart": "ng serve --port 4444",
-    "build": "ng build --prod --aot --output-hashing all --extract-css true --sourceMap false --named-chunks false --build-optimizer --vendor-chunk",
+    "build": "ng build --prod --aot --output-hashing all --extract-css true --sourceMap false --named-chunks false --build-optimizer --vendor-chunk && move ..\\Docs\\index.html ..\\Docs\\404.html",
     "test": "ng test",
     "lint": "ng lint",
     "lint-fix": "ng lint documentation-website --fix",
