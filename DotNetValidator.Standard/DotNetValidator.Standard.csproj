@@ -14,14 +14,14 @@
     <Description>DotNet Validator is a .NET library that contains a set of utility methods which could be used to validate or sanitize .NET data-models.</Description>
     <Copyright>Copyright ©  2019</Copyright>
     <PackageTags>Validation .NET-Validation Validator Data-Validation Model-Validation Web-API Sanitization Sanitize .NET</PackageTags>
-    <AssemblyVersion>2.0.1</AssemblyVersion>
-    <FileVersion>2.0.1</FileVersion>
+    <AssemblyVersion>2.0.3</AssemblyVersion>
+    <FileVersion>2.0.3</FileVersion>
     <PackageProjectUrl>https://github.com/FawzyMokhtar/DotNetValidator</PackageProjectUrl>
     <RepositoryUrl>https://github.com/FawzyMokhtar/DotNetValidator</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>See https://fawzymokhtar.github.io/DotNetValidator-Docs/v2.0.0/release-notes</PackageReleaseNotes>
     <PackageIconUrl>https://raw.githubusercontent.com/FawzyMokhtar/DotNetValidator/master/ICON.ico</PackageIconUrl>
-    <Version>2.0.1</Version>
+    <Version>2.0.3</Version>
     
   </PropertyGroup>
 
