@@ -1,0 +1,90 @@
+<app-post *ngIf="post" [post]="post" [previous]="previous" [next]="next">
+
+    <!-- Article -->
+    <ng-container class="article">
+        <p>
+            The <code>ValidationResult</code> contains to different <code>static</code> methods those are used to
+            validate data-models, the first one is <code>ValidationResult.Validate()</code> and the other one is
+            <code>ValidationResult.Result()</code>
+        </p>
+        <div>
+            <h2 class="section-heading">
+                How to Use?
+                <a id="how-to-use" aria-hidden="true" class="section-heading-ref"></a>
+            </h2>
+            <ul>
+                <li>
+                    <h3>
+                        Using <code>ValidationResult.Validate()</code> :
+                        <a id="validate" aria-hidden="true" class="section-heading-ref"></a>
+                    </h3>
+                    <strong>To do : </strong>
+                    <i>
+                        <ol>
+                            <li>
+                                Validate that the person's name length is not more than 5 characters.
+                            </li>
+                            <li>
+                                Validate that the person's age must be at least 20 years.
+                            </li>
+                        </ol>
+                    </i>
+                    <p>
+                        Let's start with creating a new class called <code>Person</code>.
+                    </p>
+                    <pre class="code-block">
+                        <code appHighlight>{{person1}}</code>
+                    </pre>
+                    <pre class="code-block">
+                        <code appHighlight>{{validate}}</code>
+                    </pre>
+                    <div class="alert alert-info">
+                        <ul>
+                            <li>
+                                The result will be a <code>List&lt;ValidationError&gt;</code>.
+                            </li>
+                            <li>
+                                Each item in the list contains two properties :
+                                <ol>
+                                    <li>
+                                        <code>PropertyName</code> : the name of the property in the data-model.
+                                    </li>
+                                    <li>
+                                        <code>ErrorMessages</code> : the list of error messages resulting from
+                                        validating the <code>property</code>.
+                                    </li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <h3>
+                        Using <code>ValidationResult.Result()</code> :
+                        <a id="result" aria-hidden="true" class="section-heading-ref"></a>
+                    </h3>
+                    <pre class="code-block">
+                        <code appHighlight>{{result}}</code>
+                    </pre>
+                    <div class="alert alert-info">
+                        <ul>
+                            <li>
+                                The result will be a <code>dynamic object</code>.
+                            </li>
+                            <li>
+                                Each <code>property</code> that had a validation error will be added to this
+                                <code>dynamic object</code>.
+                            </li>
+                            <li>
+                                the value of the <code>property</code> is the list of error messages resulting from
+                                validating the <code>property</code>.
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <!-- End Article -->
+
+</app-post>

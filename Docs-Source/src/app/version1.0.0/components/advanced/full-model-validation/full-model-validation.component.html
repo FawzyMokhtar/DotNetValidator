@@ -1,0 +1,56 @@
+<app-post *ngIf="post" [post]="post" [previous]="previous" [next]="next">
+
+    <!-- Article -->
+    <ng-container class="article">
+        <p>
+            The <code>ValidationResult</code> class enables us to validate all of data-model properties together,
+            instead of validating each one individually.
+        </p>
+        <div>
+            <h2 class="section-heading">
+                Examples
+                <a id="examples" aria-hidden="true" class="section-heading-ref"></a>
+            </h2>
+            <ul>
+                <li>
+                    <h3>
+                        Example 1 :
+                        <a id="example1" aria-hidden="true" class="section-heading-ref"></a>
+                    </h3>
+                    <strong>To do : </strong>
+                    <i>
+                        <ol>
+                            <li>
+                                Validate that the person's name length is not more than 5 characters.
+                            </li>
+                            <li>
+                                Validate that the person's age must be at least 20 years.
+                            </li>
+                        </ol>
+                    </i>
+                    <p>
+                        Let's start with creating a new class called <code>Person</code>.
+                    </p>
+                    <pre class="code-block">
+                        <code appHighlight>{{person1}}</code>
+                    </pre>
+                    <pre class="code-block">
+                        <code appHighlight>{{example1}}</code>
+                    </pre>
+                </li>
+                <li>
+                    <h3>
+                        Example 2 :
+                        <a id="example2" aria-hidden="true" class="section-heading-ref"></a>
+                    </h3>
+                    <strong>Or you can use the following syntax instead.</strong>
+                    <pre class="code-block">
+                        <code appHighlight>{{example2}}</code>
+                    </pre>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <!-- End Article -->
+
+</app-post>

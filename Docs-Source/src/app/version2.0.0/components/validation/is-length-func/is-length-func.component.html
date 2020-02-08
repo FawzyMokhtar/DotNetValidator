@@ -1,0 +1,89 @@
+<app-post *ngIf="post" [post]="post" [previous]="previous" [next]="next">
+
+    <!-- Article -->
+    <ng-container class="article">
+        <p>
+            An <code>extension</code> validation <code>method</code> that validates the length of the property's value
+            using the given minimum and maximum length.
+        </p>
+        <div>
+            <h2 class="section-heading">
+                Definition
+                <a id="definition" aria-hidden="true" class="section-heading-ref"></a>
+            </h2>
+            <ul>
+                <li>
+                    <h3>
+                        <code>.IsLength(long minLength, long maxLength, string errorMessage = null)</code>
+                    </h3>
+                    <h3>Supported data types :</h3>
+                    <ul>
+                        <li>
+                            Strings.
+                        </li>
+                    </ul>
+                    <h3>Parameters :</h3>
+                    <ul>
+                        <li>
+                            <code>minLength</code> : The minimum length.
+                        </li>
+                        <li>
+                            <code>maxLength</code> : The maximum length.
+                        </li>
+                        <li>
+                            <code>errorMessage</code> : An optional validation error message.
+                            <br><i>If omitted, a default error message will be used</i>.
+                        </li>
+                    </ul>
+
+                    <h3>Returns :</h3>
+                    <ul>
+                        <li>
+                            A <code>Validator</code> to add more <code>validation</code> or <code>sanitization</code>.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="section-heading">
+                Examples
+                <a id="examples" aria-hidden="true" class="section-heading-ref"></a>
+            </h2>
+            <ul>
+                <li>
+                    <h3>
+                        Example 1 :
+                        <a id="example1" aria-hidden="true" class="section-heading-ref"></a>
+                    </h3>
+                    <strong>To do : </strong>
+                    <i>Validate that the person's name length is between 2 and 5 characters.
+                    </i>
+                    <p>
+                        Let's start with creating a new class called <code>Person</code>.
+                    </p>
+                    <pre class="code-block">
+                        <code appHighlight>{{person1}}</code>
+                    </pre>
+                    <pre class="code-block">
+                        <code appHighlight>{{example1}}</code>
+                    </pre>
+                </li>
+                <li>
+                    <h3>
+                        Example 2 :
+                        <a id="example2" aria-hidden="true" class="section-heading-ref"></a>
+                    </h3>
+                    <strong>To do : </strong>
+                    <i>Validate that the person's name length is between 2 and 20 characters.
+                    </i>
+                    <pre class="code-block">
+                        <code appHighlight>{{example2}}</code>
+                    </pre>
+                </li>
+            </ul>
+        </div>
+    </ng-container>
+    <!-- End Article -->
+
+</app-post>

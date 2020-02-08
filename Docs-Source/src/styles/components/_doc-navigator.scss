@@ -1,0 +1,34 @@
+.doc-prev-next {
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .doc-prev,
+  .doc-next {
+    padding: 0.25rem;
+  }
+
+  .doc-prev {
+    justify-self: start;
+  }
+
+  .doc-next {
+    justify-self: end;
+  }
+
+  > :only-child {
+    &.doc-next {
+      margin-left: auto;
+    }
+  }
+}
+
+@include screen-max-md {
+  .doc-prev-next {
+    .doc-prev,
+    .doc-next {
+      margin-top: 1rem;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.button {
+  color: $theme-color;
+  display: inline-block;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $theme-color;
+  border-image: initial;
+  border-radius: 3px;
+  transition: background 0.3s ease 0s, color 0.3s ease 0s;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $theme-color;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,17 @@
+.img-xs {
+  width: 37px;
+  height: 37px;
+}
+
+@for $margin from 1 through 100 {
+  .grid-margin-#{$margin} {
+    margin-bottom: #{$margin}px;
+  }
+}
+
+/* From Bootstrap theme-colors Map */
+@each $color, $value in $theme-colors {
+  .c-#{$color} {
+    color: $value;
+  }
+}

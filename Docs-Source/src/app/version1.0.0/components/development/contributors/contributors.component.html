@@ -1,0 +1,39 @@
+<app-post *ngIf="post" [post]="post" [previous]="previous" [next]="next">
+
+    <!-- Article -->
+    <ng-container class="article">
+        <p>
+            We are the <a routerLink="/">DotNet Validator</a> contributors,
+        </p>
+        <div class="contributors">
+            <div class="card">
+                <img src="assets/imgs/contributors/fawzy-mokhtar.jpg" class="card-img-top" alt="Fawzy Mokhtar">
+                <div class="card-body">
+                    <h5 class="card-title">Fawzy Mokhtar</h5>
+                    <p class="card-text">Backend Developer.</p>
+                </div>
+                <div class="card-body">
+                    <a href="https://www.linkedin.com/in/fawzy-mokhtar/" target="blank" class="card-link">LinkedIn</a>
+                    <a href="https://stackoverflow.com/users/3858705/fawzy-mokhtar" target="blank"
+                        class="card-link">StackOverflow</a>
+                    <a href="https://github.com/fawzymokhtar" target="blank" class="card-link">GitHub</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="{{settings.gitHubRepo}}" target="blank" class="card-link">
+                    <img src="assets/imgs/contributors/new-contributor.png" class="card-img-top" alt="New Collaborator">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">You!</h5>
+                    <p class="card-text">Join us!.</p>
+                </div>
+                <div class="card-body">
+                    <a href="{{settings.gitHubRepo}}" target="blank" class="card-link">Become a contributor</a>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <!-- End Article -->
+
+</app-post>

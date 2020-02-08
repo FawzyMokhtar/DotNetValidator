@@ -1,0 +1,65 @@
+<div class="post-wrapper">
+
+    <div class="post">
+        <!-- Article -->
+        <app-post-article [title]="'DotNet Validator Versions'" [showEditBtn]="false">
+
+            <ng-container class="article">
+
+                <!-- Pass article content to article component -->
+                <div>
+                    <h2 class="section-heading">
+                        Latest Version
+                    </h2>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{latestVersion.id}}</th>
+                                <td>
+                                    <a [routerLink]="['/' + latestVersion.version]">
+                                        Documentation
+                                    </a>
+                                </td>
+                                <td>
+                                    <a [routerLink]="['/' + latestVersion.version + '/release-notes']">
+                                        Release Notes
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+                <div>
+                    <h2 class="section-heading">
+                        Past Versions
+                    </h2>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr *ngFor="let version of versions">
+                                <th scope="row">{{version.id}}</th>
+                                <td>
+                                    <a [routerLink]="['/' + version.version]">
+                                        Documentation
+                                    </a>
+                                </td>
+                                <td>
+                                    <a [routerLink]="['/' + version.version + '/release-notes']">
+                                        Release Notes
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </ng-container>
+
+        </app-post-article>
+        <!-- End Article -->
+    </div>
+
+</div>
+<!-- Post Wrapper -->

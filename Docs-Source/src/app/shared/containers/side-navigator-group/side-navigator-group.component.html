@@ -1,0 +1,7 @@
+<div class="nav-item">
+    <h3 class="section-title">
+        <i class="fa fa-leanpub"></i>
+        {{group.title}}
+    </h3>
+    <app-side-navigator-item *ngFor="let post of group.posts" [post]="post"></app-side-navigator-item>
+</div>
