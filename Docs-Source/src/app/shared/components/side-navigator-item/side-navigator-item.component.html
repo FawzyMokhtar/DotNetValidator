@@ -1,6 +1,0 @@
-<a [routerLink]="post.route" routerLinkActive="active" class="nav-link">
-    <ng-container *ngIf="post.isCode; else nonCode">
-        <span><code>{{post.title}}</code></span>
-    </ng-container>
-    <ng-template #nonCode>{{post.title}}</ng-template>
-</a>
