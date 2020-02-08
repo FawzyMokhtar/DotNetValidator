@@ -7,7 +7,7 @@ import * as fromContainers from "./containers";
 
 const routes: Routes = [
     {
-        path: "docs",
+        path: "",
         component: fromContainers.LayoutComponent,
         children: [
             {
@@ -43,7 +43,7 @@ const routes: Routes = [
     {
         path: "**",
         pathMatch: "full",
-        redirectTo: "docs"
+        redirectTo: ""
     },
 ];
 

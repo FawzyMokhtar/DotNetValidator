@@ -16,12 +16,12 @@
                             <tr>
                                 <th scope="row">{{latestVersion.id}}</th>
                                 <td>
-                                    <a [routerLink]="['/docs/' + latestVersion.version]">
+                                    <a [routerLink]="['/' + latestVersion.version]">
                                         Documentation
                                     </a>
                                 </td>
                                 <td>
-                                    <a [routerLink]="['/docs/' + latestVersion.version + '/release-notes']">
+                                    <a [routerLink]="['/' + latestVersion.version + '/release-notes']">
                                         Release Notes
                                     </a>
                                 </td>
@@ -40,12 +40,12 @@
                             <tr *ngFor="let version of versions">
                                 <th scope="row">{{version.id}}</th>
                                 <td>
-                                    <a [routerLink]="['/docs/' + version.version]">
+                                    <a [routerLink]="['/' + version.version]">
                                         Documentation
                                     </a>
                                 </td>
                                 <td>
-                                    <a [routerLink]="['/docs/' + version.version + '/release-notes']">
+                                    <a [routerLink]="['/' + version.version + '/release-notes']">
                                         Release Notes
                                     </a>
                                 </td>

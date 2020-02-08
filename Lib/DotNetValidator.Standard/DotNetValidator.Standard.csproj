@@ -16,11 +16,11 @@
     <PackageTags>Validation .NET-Validation Validator Data-Validation Model-Validation Web-API Sanitization Sanitize .NET</PackageTags>
     <AssemblyVersion>2.0.0</AssemblyVersion>
     <FileVersion>2.0.0</FileVersion>
-    <PackageProjectUrl>https://dotnetvalidator.github.io</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/DotNetValidator/DotNetValidator</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/FawzyMokhtar/DotNetValidator</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/FawzyMokhtar/DotNetValidator</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>See https://dotnetvalidator.github.io/docs/v2.0.0/release-notes</PackageReleaseNotes>
-    <PackageIconUrl>https://raw.githubusercontent.com/DotNetValidator/DotNetValidator/master/ICON.ico</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/FawzyMokhtar/DotNetValidator/master/ICON.ico</PackageIconUrl>
     <Version>2.0.0</Version>
     
   </PropertyGroup>

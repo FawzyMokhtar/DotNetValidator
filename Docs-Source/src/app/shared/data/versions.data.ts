@@ -11,7 +11,7 @@ enum VERSIONS {
 /**
  * The base route for the documentation version modules.
  */
-const baseDocsRoute = "/docs";
+const baseDocsRoute = "";
 
 /**
  * Resolves the given post route to a full route relative to its version.
